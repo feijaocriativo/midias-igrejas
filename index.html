@@ -21,7 +21,7 @@
       --bege: #fdfcf6;
       --cinza: #1E201F;
       --azul: #275C76;
-      --destaque: #F8FF57;
+      --destaque: #A5BF6B;
     }
     * {
       margin: 0;
@@ -41,15 +41,25 @@
       opacity: 0.95;
     }
     header {
-      background: linear-gradient(to left, rgba(104, 141, 59, 0.95), rgba(104, 141, 59, 0.85)), url('foto.png') right center/contain no-repeat;
+      background: linear-gradient(to right, rgba(104, 141, 59, 0.95), rgba(104, 141, 59, 0.85));
       color: white;
       padding: 100px 20px 80px;
-      text-align: left;
-      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 60px;
       flex-wrap: wrap;
+    }
+    header .mockup {
+      flex: 1 1 40%;
+    }
+    header .mockup img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+    header .content {
+      flex: 1 1 55%;
     }
     header h1 {
       letter-spacing: -0.8px;
@@ -57,25 +67,16 @@
       font-size: 3.5em;
       font-weight: 800;
       margin-bottom: 20px;
-      letter-spacing: -1px;
     }
     header p {
       font-size: 1.4em;
       max-width: 640px;
-      margin: 0 auto 30px;
+      margin-bottom: 30px;
       font-weight: 300;
-    }
-    header .mockup {
-      display: none;
-    }
-    header .mockup img {
-      max-width: 240px;
-      border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
     }
     .btn {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 10px;
       padding: 18px 36px;
       background-color: var(--verde-claro);
       color: var(--cinza);
@@ -86,7 +87,7 @@
       transition: background 0.3s ease;
     }
     .btn:hover {
-      background-color: #A5BF6B;
+      background-color: var(--destaque);
     }
     section {
       padding: 100px 20px;
@@ -117,18 +118,26 @@
     .cta {
       background-color: var(--verde-escuro);
       color: white;
-      text-align: center;
       padding: 80px 20px;
     }
+    .cta-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cta-price {
+      flex: 1 1 40%;
+    }
+    .cta-benefits {
+      flex: 1 1 55%;
+    }
     .cta h2 {
-      font-size: 2.5em;
+      font-size: 3em;
       font-weight: 700;
       margin-bottom: 20px;
       color: var(--destaque);
-    }
-    .cta p {
-      font-size: 1.3em;
-      font-weight: 300;
     }
     .faq-item {
       border-bottom: 1px solid #ccc;
@@ -172,12 +181,14 @@
 </head>
 <body>
   <header>
-    <h1>Guia completo de mídias para igrejas</h1>
-    <p>Aprenda como planejar, criar e executar uma comunicação eficaz e espiritual com excelência.</p>
     <div class="mockup">
       <img src="foto.png" alt="Capa do eBook">
     </div>
-    <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="btn">quero começar agora</a>
+    <div class="content">
+      <h1>Guia completo de mídias para igrejas</h1>
+      <p>Aprenda como planejar, criar e executar uma comunicação eficaz e espiritual com excelência.</p>
+      <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="btn">quero começar agora</a>
+    </div>
   </header>
 
   <section>
@@ -188,19 +199,15 @@
       <div><strong>busca um plano simples</strong> de execução que funcione na prática e respeite sua rotina.</div>
       <div><strong>deseja alinhar estratégia e espiritualidade</strong> sem comprometer a essência do ministério.</div>
     </div>
-      <div>quer <strong>engajamento de verdade</strong>, e não só curtida vazia</div>
-      <div>precisa de um <strong>planejamento simples</strong> e funcional</div>
-      <div>quer alinhar <strong>espiritualidade e estratégia</strong></div>
-    </div>
   </section>
 
-  <section class="cta" style="text-align: left;">
-    <div style="display: flex; gap: 40px; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-      <div style="flex: 1 1 50%;">
-        <h2 style="color: var(--verde-claro); font-size: 3em; font-weight: bold;">R$46,90</h2>
+  <section class="cta">
+    <div class="cta-inner">
+      <div class="cta-price">
+        <h2>R$46,90</h2>
         <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="btn">comprar agora</a>
       </div>
-      <div style="flex: 1 1 50%;">
+      <div class="cta-benefits">
         <ul style="font-size: 1.1em; line-height: 1.8; padding-left: 20px;">
           <li>✔️ Estratégia prática para redes sociais cristãs</li>
           <li>✔️ Acesso imediato ao conteúdo digital</li>
