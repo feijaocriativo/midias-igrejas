@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Mídias na Igreja</title>
+  <style>
+    @font-face {
+      font-family: 'Transforma Mix';
+      src: url('TransformaMix_Trial-Regular.woff2') format('woff2'),
+           url('TransformaMix_Trial-Regular.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Transforma Sans';
+      src: url('TransformaSans_Trial-Regular.woff2') format('woff2'),
+           url('TransformaSans_Trial-Regular.woff') format('woff');
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Transforma Sans', sans-serif;
+      background-color: #F2F2DA; color: #1E201F;
+    }
+    header {
+      background: linear-gradient(135deg, #688D3B, #A5BF6B);
+      padding: 100px 20px 60px;
+      text-align: center;
+      color: white;
+      animation: fadeIn 1s ease-in-out;
+    }
+    header h1 {
+      font-family: 'Transforma Mix', sans-serif;
+      font-size: 3em;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    header p {
+      font-size: 1.25em;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    .btn {
+      background-color: #B5D1B2;
+      color: #1E201F;
+      padding: 16px 32px;
+      font-weight: bold;
+      font-size: 1.1em;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+    .btn:hover { background-color: #A5BF6B; }
+    .section, .guarantee, .faq {
+      padding: 80px 20px;
+      max-width: 960px;
+      margin: auto;
+    }
+    .section h2, .guarantee h2, .faq h2 {
+      font-family: 'Transforma Mix', sans-serif;
+      font-size: 2em;
+      color: #275C76;
+    }
+    .highlight {
+      background-color: #E8F5E9;
+      padding: 30px;
+      border-left: 5px solid #548151;
+      border-radius: 6px;
+      font-size: 1.1em;
+      font-weight: 500;
+    }
+    .cta-block {
+      background-color: #688D3B;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: 40px;
+      animation: fadeIn 1.5s ease;
+    }
+    .cta-block h2 {
+      font-family: 'Transforma Mix', sans-serif;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .cta-block p { font-size: 1.2em; }
+    .mockup-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .mockup-gallery img {
+      width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    .faq-item {
+      border-bottom: 1px solid #ccc;
+      padding: 15px 0;
+      cursor: pointer;
+    }
+    .faq-item h3 {
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2em;
+    }
+    .faq-item p {
+      display: none;
+      margin-top: 10px;
+      font-size: 1.05em;
+    }
+    .faq-item.active p {
+      display: block;
+    }
+    footer {
+      background-color: #171D0C;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9em;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach(item => {
+        item.addEventListener('click', () => {
+          items.forEach(i => i !== item && i.classList.remove('active'));
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- conteúdo anterior permanece igual -->
+
+  <section class="guarantee">
+    <h2>Garantia de 7 dias</h2>
+    <p>Você tem 7 dias para experimentar o conteúdo. Se achar que não é pra você, basta solicitar o reembolso dentro desse prazo. Simples assim, sem burocracia.</p>
+  </section>
+
+  <section class="faq">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-item">
+      <h3>O conteúdo é 100% digital? <span>+</span></h3>
+      <p>Sim! Assim que o pagamento for aprovado, você recebe acesso imediato ao material.</p>
+    </div>
+    <div class="faq-item">
+      <h3>O guia é indicado para qualquer igreja? <span>+</span></h3>
+      <p>Sim. Ele foi criado pensando em contextos diversos — desde igrejas pequenas até as maiores.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Preciso ter experiência com mídias? <span>+</span></h3>
+      <p>Não. O guia é pensado para iniciantes e também traz insights para quem já atua na área.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Feijão Criativo · todos os direitos reservados.
+  </footer>
+</body>
+</html>
