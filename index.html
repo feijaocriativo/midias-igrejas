@@ -18,9 +18,10 @@
     :root {
       --verde-escuro: #688D3B;
       --verde-claro: #B5D1B2;
-      --bege: #F2F2DA;
+      --bege: #fdfcf6;
       --cinza: #1E201F;
       --azul: #275C76;
+      --destaque: #F8FF57;
     }
     * {
       margin: 0;
@@ -28,20 +29,25 @@
       box-sizing: border-box;
     }
     body {
+      letter-spacing: -0.3px;
       font-family: 'Transforma Sans', sans-serif;
       background-color: var(--bege);
       color: var(--cinza);
       line-height: 1.6;
       background-image: url('Preenchimento de Cor 1 copiar.png');
+      background-blend-mode: multiply;
       background-size: cover;
+      background-repeat: no-repeat;
     }
     header {
       background: var(--verde-escuro) url('Camada 5.png') center/cover no-repeat;
       color: white;
       padding: 100px 20px 80px;
       text-align: center;
+      position: relative;
     }
     header h1 {
+      letter-spacing: -0.8px;
       font-family: 'Transforma Mix', sans-serif;
       font-size: 3.5em;
       font-weight: 800;
@@ -51,8 +57,16 @@
     header p {
       font-size: 1.4em;
       max-width: 640px;
-      margin: 0 auto;
+      margin: 0 auto 30px;
       font-weight: 300;
+    }
+    header .mockup {
+      margin-top: 40px;
+    }
+    header .mockup img {
+      max-width: 240px;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
     }
     .btn {
       display: inline-block;
@@ -75,6 +89,7 @@
       margin: 0 auto;
     }
     section h2 {
+      letter-spacing: -0.6px;
       font-family: 'Transforma Mix', sans-serif;
       font-size: 2.8em;
       color: var(--azul);
@@ -94,14 +109,6 @@
       font-size: 1.1em;
       font-weight: 400;
     }
-    .mockup {
-      text-align: center;
-    }
-    .mockup img {
-      max-width: 320px;
-      border-radius: 12px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-    }
     .cta {
       background-color: var(--verde-escuro);
       color: white;
@@ -112,6 +119,7 @@
       font-size: 2.5em;
       font-weight: 700;
       margin-bottom: 20px;
+      color: var(--destaque);
     }
     .cta p {
       font-size: 1.3em;
@@ -137,6 +145,7 @@
       display: block;
     }
     footer {
+      letter-spacing: -0.2px;
       background-color: var(--cinza);
       color: white;
       text-align: center;
@@ -160,12 +169,11 @@
   <header>
     <h1>Guia completo de mídias para igrejas</h1>
     <p>Aprenda como planejar, criar e executar uma comunicação eficaz e espiritual com excelência.</p>
+    <div class="mockup">
+      <img src="foto.png" alt="Capa do eBook">
+    </div>
     <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="btn">quero começar agora</a>
   </header>
-
-  <section class="mockup">
-    <img src="foto.png" alt="Capa do eBook">
-  </section>
 
   <section>
     <h2>Esse guia é pra você que...</h2>
