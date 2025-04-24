@@ -15,107 +15,114 @@
       src: url('TransformaSans_Trial-Regular.woff2') format('woff2'),
            url('TransformaSans_Trial-Regular.woff') format('woff');
     }
-    * { box-sizing: border-box; }
+    :root {
+      --verde-escuro: #688D3B;
+      --verde-claro: #B5D1B2;
+      --bege: #F2F2DA;
+      --cinza: #1E201F;
+      --azul: #275C76;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      margin: 0; padding: 0;
       font-family: 'Transforma Sans', sans-serif;
-      background-color: #F2F2DA; color: #1E201F;
+      background-color: var(--bege);
+      color: var(--cinza);
+      line-height: 1.6;
     }
     header {
-      background: linear-gradient(135deg, #688D3B, #A5BF6B);
-      padding: 100px 20px 60px;
-      text-align: center;
+      background: var(--verde-escuro);
       color: white;
-      animation: fadeIn 1s ease-in-out;
+      padding: 80px 20px;
+      text-align: center;
     }
     header h1 {
       font-family: 'Transforma Mix', sans-serif;
       font-size: 3em;
-      font-weight: bold;
       margin-bottom: 20px;
     }
     header p {
-      font-size: 1.25em;
-      max-width: 700px;
-      margin: 0 auto 30px;
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto;
     }
     .btn {
-      background-color: #B5D1B2;
-      color: #1E201F;
-      padding: 16px 32px;
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: var(--verde-claro);
+      color: var(--cinza);
       font-weight: bold;
-      font-size: 1.1em;
-      border-radius: 8px;
       text-decoration: none;
-      transition: all 0.3s ease;
-      text-transform: uppercase;
+      border-radius: 8px;
+      transition: background 0.3s;
     }
-    .btn:hover { background-color: #A5BF6B; }
-    .section, .guarantee, .faq {
+    .btn:hover {
+      background-color: var(--verde-escuro);
+      color: white;
+    }
+    section {
       padding: 80px 20px;
-      max-width: 960px;
-      margin: auto;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-    .section h2, .guarantee h2, .faq h2 {
+    section h2 {
       font-family: 'Transforma Mix', sans-serif;
-      font-size: 2em;
-      color: #275C76;
+      font-size: 2.5em;
+      color: var(--azul);
+      margin-bottom: 20px;
     }
-    .highlight {
-      background-color: #E8F5E9;
-      padding: 30px;
-      border-left: 5px solid #548151;
-      border-radius: 6px;
-      font-size: 1.1em;
-      font-weight: 500;
+    .benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
     }
-    .cta-block {
-      background-color: #688D3B;
+    .benefits div {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .mockup {
+      text-align: center;
+    }
+    .mockup img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .cta {
+      background-color: var(--verde-escuro);
       color: white;
       text-align: center;
-      padding: 50px 20px;
-      margin-top: 40px;
-      animation: fadeIn 1.5s ease;
+      padding: 60px 20px;
     }
-    .cta-block h2 {
-      font-family: 'Transforma Mix', sans-serif;
+    .cta h2 {
       font-size: 2em;
       margin-bottom: 20px;
     }
-    .cta-block p { font-size: 1.2em; }
-    .mockup-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .mockup-gallery img {
-      width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-    }
     .faq-item {
       border-bottom: 1px solid #ccc;
-      padding: 15px 0;
+      padding: 20px 0;
       cursor: pointer;
     }
     .faq-item h3 {
-      margin: 0;
       display: flex;
       justify-content: space-between;
-      font-size: 1.2em;
+      font-size: 1.1em;
     }
     .faq-item p {
       display: none;
       margin-top: 10px;
-      font-size: 1.05em;
     }
     .faq-item.active p {
       display: block;
     }
     footer {
-      background-color: #171D0C;
+      background-color: var(--cinza);
       color: white;
       text-align: center;
       padding: 40px 20px;
@@ -124,10 +131,9 @@
   </style>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const items = document.querySelectorAll('.faq-item');
-      items.forEach(item => {
+      document.querySelectorAll('.faq-item').forEach(item => {
         item.addEventListener('click', () => {
-          items.forEach(i => i !== item && i.classList.remove('active'));
+          document.querySelectorAll('.faq-item').forEach(i => i !== item && i.classList.remove('active'));
           item.classList.toggle('active');
         });
       });
@@ -136,58 +142,44 @@
 </head>
 <body>
   <header>
-    <h1>guia completo sobre mídias na igreja</h1>
-    <p>chega de improviso. comunique com clareza, propósito e estratégia. a mídia da sua igreja merece mais — e você também.</p>
+    <h1>Guia completo de mídias para igrejas</h1>
+    <p>Aprenda como planejar, criar e executar uma comunicação eficaz e espiritual com excelência.</p>
     <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="btn">quero começar agora</a>
   </header>
 
-  <section class="section">
-    <h2>esse guia é pra você que...</h2>
-    <ul>
-      <li><strong>cuida da mídia</strong> da igreja, mas está sempre improvisando</li>
-      <li>quer <strong>engajamento real</strong>, e não só curtidas</li>
-      <li>deseja <strong>planejamento prático</strong> e espiritualidade alinhada</li>
-    </ul>
+  <section class="mockup">
+    <img src="foto.png" alt="Capa do eBook">
   </section>
 
-  <div class="mockup-gallery">
-    <img src="foto.png" alt="Foto promocional do guia">
-  </div>
-
-  <section class="section">
-    <h2>o que você vai aprender</h2>
-    <div class="highlight">
-      ✅ como montar um calendário de conteúdo cristão estratégico<br>
-      ✅ projeção, transmissão e redes sociais com excelência<br>
-      ✅ como engajar a igreja sem precisar de uma super equipe<br>
-      ✅ ferramentas e ideias aplicáveis desde o primeiro culto
+  <section>
+    <h2>Esse guia é pra você que...</h2>
+    <div class="benefits">
+      <div><strong>cuida da mídia</strong> da igreja e vive improvisando na correria</div>
+      <div>quer <strong>engajamento de verdade</strong>, e não só curtida vazia</div>
+      <div>precisa de um <strong>planejamento simples</strong> e funcional</div>
+      <div>quer alinhar <strong>espiritualidade e estratégia</strong></div>
     </div>
   </section>
 
-  <div class="cta-block">
+  <section class="cta">
     <h2>📘 apenas R$46,90 com acesso imediato</h2>
-    <p>conteúdo prático, com linguagem acessível e foco em resultado. leve agora o guia e transforme a mídia da sua igreja com estratégia e fé.</p>
+    <p>Conteúdo prático e direto. Receba agora o material e transforme a comunicação da sua igreja.</p>
     <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="btn">comprar agora</a>
-  </div>
-
-  <section class="guarantee">
-    <h2>Garantia de 7 dias</h2>
-    <p>Você tem 7 dias para experimentar o conteúdo. Se achar que não é pra você, basta solicitar o reembolso dentro desse prazo. Simples assim, sem burocracia.</p>
   </section>
 
-  <section class="faq">
-    <h2>Perguntas frequentes</h2>
+  <section>
+    <h2>Perguntas Frequentes</h2>
     <div class="faq-item">
       <h3>O conteúdo é 100% digital? <span>+</span></h3>
-      <p>Sim! Assim que o pagamento for aprovado, você recebe acesso imediato ao material.</p>
+      <p>Sim, você recebe tudo por e-mail assim que o pagamento for confirmado.</p>
     </div>
     <div class="faq-item">
-      <h3>O guia é indicado para qualquer igreja? <span>+</span></h3>
-      <p>Sim. Ele foi criado pensando em contextos diversos — desde igrejas pequenas até as maiores.</p>
+      <h3>É pra qualquer tipo de igreja? <span>+</span></h3>
+      <p>Sim, foi criado pra funcionar em diferentes contextos e estruturas.</p>
     </div>
     <div class="faq-item">
-      <h3>Preciso ter experiência com mídias? <span>+</span></h3>
-      <p>Não. O guia é pensado para iniciantes e também traz insights para quem já atua na área.</p>
+      <h3>Preciso saber design ou redes sociais? <span>+</span></h3>
+      <p>Não. O conteúdo é fácil de aplicar mesmo pra quem nunca fez isso antes.</p>
     </div>
   </section>
 
