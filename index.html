@@ -35,16 +35,21 @@
       color: var(--cinza);
       line-height: 1.6;
       background-image: url('Preenchimento de Cor 1 copiar.png');
+      background-repeat: repeat;
+      background-size: 200px;
       background-blend-mode: multiply;
-      background-size: cover;
-      background-repeat: no-repeat;
+      opacity: 0.95;
     }
     header {
-      background: var(--verde-escuro) url('Camada 5.png') center/cover no-repeat;
+      background: linear-gradient(to left, rgba(104, 141, 59, 0.95), rgba(104, 141, 59, 0.85)), url('foto.png') right center/contain no-repeat;
       color: white;
       padding: 100px 20px 80px;
-      text-align: center;
+      text-align: left;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
     header h1 {
       letter-spacing: -0.8px;
@@ -61,7 +66,7 @@
       font-weight: 300;
     }
     header .mockup {
-      margin-top: 40px;
+      display: none;
     }
     header .mockup img {
       max-width: 240px;
@@ -178,17 +183,32 @@
   <section>
     <h2>Esse guia é pra você que...</h2>
     <div class="benefits">
-      <div><strong>cuida da mídia</strong> da igreja e vive improvisando na correria</div>
+      <div><strong>cuida da mídia da igreja</strong> e vive improvisando — sem planejamento e sempre correndo contra o tempo.</div>
+      <div><strong>quer engajamento de verdade</strong>, não só curtidas vazias sem conexão real com as pessoas.</div>
+      <div><strong>busca um plano simples</strong> de execução que funcione na prática e respeite sua rotina.</div>
+      <div><strong>deseja alinhar estratégia e espiritualidade</strong> sem comprometer a essência do ministério.</div>
+    </div>
       <div>quer <strong>engajamento de verdade</strong>, e não só curtida vazia</div>
       <div>precisa de um <strong>planejamento simples</strong> e funcional</div>
       <div>quer alinhar <strong>espiritualidade e estratégia</strong></div>
     </div>
   </section>
 
-  <section class="cta">
-    <h2>📘 apenas R$46,90 com acesso imediato</h2>
-    <p>Conteúdo prático e direto. Receba agora o material e transforme a comunicação da sua igreja.</p>
-    <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="btn">comprar agora</a>
+  <section class="cta" style="text-align: left;">
+    <div style="display: flex; gap: 40px; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+      <div style="flex: 1 1 50%;">
+        <h2 style="color: var(--verde-claro); font-size: 3em; font-weight: bold;">R$46,90</h2>
+        <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="btn">comprar agora</a>
+      </div>
+      <div style="flex: 1 1 50%;">
+        <ul style="font-size: 1.1em; line-height: 1.8; padding-left: 20px;">
+          <li>✔️ Estratégia prática para redes sociais cristãs</li>
+          <li>✔️ Acesso imediato ao conteúdo digital</li>
+          <li>✔️ Aplicável a qualquer igreja</li>
+          <li>✔️ Não precisa saber design</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section>
