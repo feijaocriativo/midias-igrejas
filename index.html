@@ -1,222 +1,165 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page - Mídias na Igreja</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Transforma Sans_Trial', sans-serif;
-      background-color: #f2f2da;
-      background-image: url('Preenchimento de Cor 1 copiar.png');
-      background-repeat: repeat;
-      background-size: 300px;
-      background-position: top left;
-      background-attachment: fixed;
-    }
-    .section {
-      width: 100%;
-      max-width: 1903px;
-      margin: 0 auto;
-    }
-    .hero {
-      background: url('Cabeçalho.png') no-repeat center center;
-      background-size: cover;
-      height: 753px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
-      padding-right: 80px;
-      text-align: right;
-      color: #F2F2DA;
-    }
-    .hero h1 {
-      font-size: 42px;
-      line-height: 46px;
-      font-family: 'Transforma Sans_Trial', sans-serif;
-    }
-    .hero h1 .dark {
-      color: #1E201F;
-      font-weight: 1000;
-    }
-    .hero p {
-      font-size: 20px;
-      font-weight: 600;
-      max-width: 500px;
-      margin-top: 20px;
-    }
-    .cta {
-      margin-top: 40px;
-      background: linear-gradient(191deg, #1E201F 0%, #688D3B 100%);
-      padding: 20px 40px;
-      color: #F2F2DA;
-      font-weight: 1000;
-      letter-spacing: 1.8px;
-      text-decoration: none;
-    }
-    .problem {
-      background: #F2F2DA;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .problem h2 {
-      font-size: 32px;
-      font-weight: 600;
-      font-family: 'Transforma Mix_Trial', sans-serif;
-      letter-spacing: -0.8px;
-      line-height: 1.1;
-    }
-    .problem .highlight {
-      color: #548151;
-    }
-    .problem p {
-      font-size: 18px;
-      line-height: 22px;
-      margin-top: 20px;
-    }
-    .solution {
-      background: linear-gradient(214deg, #275C76 0%, #1F1F1F 100%);
-      color: #F2F2DA;
-      display: flex;
-      flex-wrap: wrap;
-      padding: 60px 20px;
-      align-items: center;
-      gap: 60px;
-    }
-    .solution img {
-      max-width: 750px;
-      width: 100%;
-    }
-    .solution-text {
-      max-width: 500px;
-    }
-    .solution-text h3 {
-      font-size: 32px;
-      font-family: 'Transforma Mix_Trial', sans-serif;
-      font-weight: 600;
-      margin-bottom: 20px;
-      letter-spacing: -0.8px;
-      line-height: 1.1;
-    }
-    .solution-text ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .solution-text li::before {
-      content: '✔️ ';
-    }
-    .price-section {
-      background: #1F1F1F;
-      color: #A5BF6B;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .price-section .label {
-      font-size: 24px;
-      font-family: 'Transforma Mix_Trial', sans-serif;
-      font-weight: 600;
-      color: #A5BF6B;
-    }
-    .price-section p {
-      font-size: 96px;
-      font-weight: 900;
-      color: #688D3B;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: nowrap;
-      gap: 4px;
-    }
-    .price-section p span.small {
-      font-size: 20px;
-      position: relative;
-      top: -10px;
-    }
-    .price-section ul {
-      list-style: none;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      padding: 0;
-      color: #F2F2DA;
-    }
-    .price-section li::before {
-      content: '✔️ ';
-    }
-    .price-section .cta-buy {
-      background: linear-gradient(190deg, #688D3B 0%, #A5BF6B 100%);
-      color: #1F1F1F;
-      padding: 15px 30px;
-      font-weight: 800;
-      margin-top: 20px;
-      display: inline-block;
-      text-decoration: none;
-    }
-    .guarantee {
-      background: #F2F2DA;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .faq {
-      background: #F2F2DA;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .faq h2 {
-      margin-bottom: 30px;
-      font-size: 28px;
-      font-weight: 700;
-      color: #1F1F1F;
-    }
-    .faq details {
-      background: transparent;
-      padding: 20px;
-      border: 1px solid #ccc;
-      margin: 0 auto 15px;
-      border-radius: 8px;
-      font-size: 16px;
-      max-width: 700px;
-    }
-    .faq summary {
-      font-weight: 600;
-      cursor: pointer;
-      list-style: none;
-    }
-    .faq details[open] summary {
-      color: #548151;
-    }
-    @media (max-width: 768px) {
-      .solution {
-        flex-direction: column;
-        text-align: center;
-      }
-      .hero {
-        align-items: center;
-        text-align: center;
-        padding-right: 0;
-      }
-      .price-section p {
-        flex-wrap: nowrap;
-      }
-    }
-  </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const details = document.querySelectorAll('.faq details');
-      details.forEach((targetDetail) => {
-        targetDetail.addEventListener('click', () => {
-          details.forEach((detail) => {
-            if (detail !== targetDetail) {
-              detail.removeAttribute('open');
-            }
-          });
-        });
-      });
-    });
-  </script>
-</head>
-<body>
-  <!-- conteúdo HTML mantido como está -->
-</body>
-</html>
+ <html lang="pt-br">
+ <head>
+ @@ -61,9 +60,10 @@
+     }
+     .problem h2 {
+       font-size: 32px;
+       font-weight: 600;
+       font-family: 'Transforma Mix_Trial', sans-serif;
+       letter-spacing: -0.5px;
+       font-weight: 600;
+       letter-spacing: -0.8px;
+       line-height: 1.1;
+     }
+     .problem .highlight {
+       color: #548151;
+ @@ -91,10 +91,11 @@
+     }
+     .solution-text h3 {
+       font-size: 32px;
+       font-weight: 600;
+       font-family: 'Transforma Mix_Trial', sans-serif;
+       font-weight: 600;
+       margin-bottom: 20px;
+       letter-spacing: -0.5px;
+       letter-spacing: -0.8px;
+       line-height: 1.1;
+     }
+     .solution-text ul {
+       list-style: none;
+ @@ -122,11 +123,13 @@
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       gap: 6px;
+       gap: 4px;
+       flex-wrap: nowrap;
+     }
+     .price-section p span.small {
+       font-size: 20px;
+       vertical-align: middle;
+       position: relative;
+       top: -10px;
+     }
+     .price-section ul {
+       list-style: none;
+ @@ -155,25 +158,27 @@
+     .faq {
+       background: #F2F2DA;
+       padding: 60px 20px;
+       text-align: center;
+     }
+     .faq h2 {
+       text-align: center;
+       margin-bottom: 30px;
+       font-size: 28px;
+       font-weight: 700;
+       color: #1F1F1F;
+     }
+     .faq details {
+       background: #f2f2da;
+       background: transparent;
+       padding: 20px;
+       border: 1px solid #ccc;
+       margin-bottom: 15px;
+       margin: 0 auto 15px;
+       border-radius: 8px;
+       font-size: 16px;
+       max-width: 700px;
+     }
+     .faq summary {
+       font-weight: 600;
+       cursor: pointer;
+       list-style: none;
+     }
+     .faq details[open] summary {
+       color: #548151;
+ @@ -189,70 +194,27 @@
+         padding-right: 0;
+       }
+       .price-section p {
+         flex-direction: column;
+         gap: 0;
+         flex-wrap: nowrap;
+         flex-direction: row;
+       }
+     }
+   </style>
+   <script>
+     document.addEventListener('DOMContentLoaded', () => {
+       const details = document.querySelectorAll('.faq details');
+       details.forEach((targetDetail) => {
+         targetDetail.addEventListener('click', () => {
+           details.forEach((detail) => {
+             if (detail !== targetDetail) {
+               detail.removeAttribute('open');
+             }
+           });
+         });
+       });
+     });
+   </script>
+ </head>
+ <body>
+   <div class="section hero">
+     <h1><span class="dark">CHEGA DE IMPROVISO:</span><br>sua igreja merece uma<br>mídia com propósito</h1>
+     <p>Um guia prático e estratégico pra você sair da correria e começar a comunicar sua igreja com clareza e consistência.</p>
+     <a href="#preco" class="cta">EU QUERO MUDAR</a>
+   </div>
+ 
+   <div class="section problem">
+     <h2>Você que cuida da <span class="highlight">Mídia</span><br>mas sente que está sempre <span class="highlight">apagando incêndios?</span></h2>
+     <p>👉 Planejamento? Quase impossível.<br>👉 Criatividade? Vai embora quando a semana começa.<br>👉 Resultados? Você nem sabe mais o que é isso.</p>
+     <p>Você ama servir sua igreja, mas sabe que a comunicação poderia ser muito melhor se você tivesse uma direção clara.</p>
+   </div>
+ 
+   <div class="section solution">
+     <img src="mockup.png" alt="Mockup do ebook">
+     <div class="solution-text">
+       <h3>Um guia completo criado por quem entende como é a <span class="highlight">rotina das igrejas.</span></h3>
+       <ul>
+         <li>Calendário de conteúdo estratégico e cristão</li>
+         <li>Dicas práticas pra Instagram, telão, stories e reels</li>
+         <li>Ferramentas gratuitas pra ganhar tempo</li>
+         <li>Exemplos prontos pra adaptar ao seu ministério</li>
+         <li>Zero enrolação: direto ao ponto e fácil de aplicar</li>
+       </ul>
+     </div>
+   </div>
+ 
+   <div class="section price-section" id="preco">
+     <div class="label">apenas</div>
+     <p><span class="small">R$</span>46<span class="small">,90</span></p>
+     <ul>
+       <li>Propósitos Fundamentais da Mídia Cristã</li>
+       <li>Redes Sociais para Igrejas</li>
+       <li>Estratégias de Conteúdo</li>
+       <li>Processo Criativo – PACOTE ÓRIO</li>
+       <li>Cobertura de Cultos e Eventos</li>
+       <li>Planejamento Estratégico de Conteúdo</li>
+       <li>Comunicação Interna Eficiente</li>
+       <li>Projeção com Excelência (Data Show)</li>
+       <li>Transmissão de Cultos e Eventos</li>
+       <li>Preparando uma Nova Geração</li>
+       <li>Mentalidade de Conteúdo</li>
+       <li>Gestão da Equipe de Mídia</li>
+     </ul>
+     <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="cta-buy">Garantir meu Ebook agora!</a>
+   </div>
+ 
+   <div class="section guarantee">
+     <img src="garantia.png" alt="Selo de garantia de 7 dias">
+     <p>Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
+   </div>
+ 
+   <div class="section faq">
+     <h2>Dúvidas Frequentes</h2>
+     <details><summary>O que é o ebook?</summary><p>É um guia estratégico e prático com exemplos prontos e direcionamento cristão para mídia nas igrejas.</p></details>
+     <details><summary>Quando terei acesso?</summary><p>Assim que o pagamento for confirmado, o acesso é enviado automaticamente para seu e-mail.</p></details>
+     <details><summary>Como funciona a garantia?</summary><p>Você tem até 7 dias após a compra para pedir reembolso sem burocracia.</p></details>
+     <details><summary>É só para grandes igrejas?</summary><p>Não! Esse material serve para qualquer igreja, independentemente do tamanho.</p></details>
+   </div>
+   <!-- conteúdo mantido conforme versão anterior -->
+ </body>
+ </html>
