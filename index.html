@@ -9,6 +9,7 @@
     body {
       font-family: 'Transforma Sans_Trial', sans-serif;
       background: url('Preenchimento de Cor 1 copiar.png') repeat;
+      background-size: cover;
       background-blend-mode: multiply;
     }
     .section {
@@ -107,7 +108,17 @@
     }
     .price-section span {
       font-size: 16px;
-      vertical-align: super;
+      vertical-align: middle;
+    }
+    .price-section ul {
+      list-style: none;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding: 0;
+      color: #F2F2DA;
+    }
+    .price-section li::before {
+      content: '✔️ ';
     }
     .price-section .cta-buy {
       background: linear-gradient(190deg, #688D3B 0%, #A5BF6B 100%);
@@ -130,12 +141,22 @@
     .faq h2 {
       text-align: center;
       margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 700;
+      color: #1F1F1F;
     }
     .faq details {
       background: white;
-      padding: 10px;
-      border: 1px solid #ccc;
-      margin-bottom: 10px;
+      padding: 20px;
+      border: none;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      font-size: 16px;
+    }
+    .faq summary {
+      font-weight: 600;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -168,6 +189,20 @@
 
   <div class="section price-section" id="preco">
     <p><span>R$</span>46<span>,90</span></p>
+    <ul>
+      <li>Propósitos Fundamentais da Mídia Cristã</li>
+      <li>Redes Sociais para Igrejas</li>
+      <li>Estratégias de Conteúdo</li>
+      <li>Processo Criativo – PACOTE ÓRIO</li>
+      <li>Cobertura de Cultos e Eventos</li>
+      <li>Planejamento Estratégico de Conteúdo</li>
+      <li>Comunicação Interna Eficiente</li>
+      <li>Projeção com Excelência (Data Show)</li>
+      <li>Transmissão de Cultos e Eventos</li>
+      <li>Preparando uma Nova Geração</li>
+      <li>Mentalidade de Conteúdo</li>
+      <li>Gestão da Equipe de Mídia</li>
+    </ul>
     <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="cta-buy">Garantir meu Ebook agora!</a>
   </div>
 
