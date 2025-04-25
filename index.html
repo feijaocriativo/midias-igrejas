@@ -32,56 +32,137 @@
       font-weight: 700;
     }
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Transforma Sans', sans-serif;
+      background-color: #F2F2DA;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .hero {
+      background-image: url('Cabeçalho.png');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      text-align: right;
+      padding: 80px 60px;
+      color: #F2F2DA;
+    }
+    .hero h1 {
+      font-family: 'Transforma Sans';
+      font-weight: 800;
+      font-size: 48px;
+      margin: 0;
+      color: #1E201F;
+    }
+    .hero p {
+      font-size: 20px;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+    .btn {
+      margin-top: 30px;
+      background: linear-gradient(191deg, #1E201F 0%, #688D3B 100%);
+      padding: 20px 40px;
+      color: #F2F2DA;
+      font-weight: 900;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .section {
+      background-color: #F2F2DA;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .section.dark {
+      background: linear-gradient(214deg, #275C76 0%, #1F1F1F 100%);
+      color: #F2F2DA;
+    }
+    .mockup {
+      max-width: 750px;
+      width: 100%;
+      margin: 40px auto;
+    }
+    .section ul {
+      text-align: left;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    .section ul li {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    footer {
+      background: #1F1F1F;
+      color: #F2F2DA;
+      text-align: center;
+      padding: 40px;
     }
   </style>
 </head>
 <body>
-  <div style="width: 1903px; height: 3636px; flex-direction: column; justify-content: flex-start; align-items: center; display: inline-flex">
-    <img style="align-self: stretch; height: 32.34px" src="Cabeçalho.png" alt="cabeçalho" />
-    <div style="width: 100%; max-width: 1903px; min-height: 752.64px; overflow: hidden; background-image: url('Cabeçalho.png'); flex-direction: column; justify-content: center; align-items: center; display: flex">
-      <!-- conteúdo principal do cabeçalho -->
+  <div class="hero">
+    <div>
+      <h1>CHEGA DE IMPROVISO:<br>sua igreja merece uma mídia com propósito</h1>
+      <p>Um guia prático e estratégico pra você sair da correria e começar a comunicar sua igreja com clareza e consistência.</p>
+      <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="btn">EU QUERO MUDAR</a>
     </div>
-
-    <!-- Seção de dor e apresentação -->
-    <div style="width: 1903px; background: #F2F2DA; display: flex; flex-direction: column; align-items: center;">
-      <!-- conteúdo de dor aqui -->
-    </div>
-
-    <!-- Seção de benefício e mockup -->
-    <div style="background: linear-gradient(214deg, #275C76 0%, #1F1F1F 100%); display: flex; justify-content: center; align-items: center;">
-      <img src="mockup.png" alt="Mockup eBook" style="width: 750px; height: auto;" />
-    </div>
-
-    <!-- Seção de preço -->
-    <div style="background: black; padding: 40px; color: white; display: flex; flex-direction: column; align-items: center;">
-      <h2 style="font-size: 48px; color: #A5BF6B; font-family: 'Transforma Mix';">Apenas R$46,90</h2>
-      <ul style="list-style: none; padding: 0; font-size: 16px;">
-        <li>✔️ Propósitos Fundamentais da Mídia Cristã</li>
-        <li>✔️ Redes Sociais para Igrejas</li>
-        <li>✔️ Estratégias de Conteúdo</li>
-        <li>✔️ Processo Criativo – PACOTE ÓRIO</li>
-        <li>✔️ Cobertura de Cultos e Eventos</li>
-        <li>✔️ Planejamento Estratégico de Conteúdo</li>
-        <li>✔️ Comunicação Interna Eficiente</li>
-        <li>✔️ Projeção com Excelência (Data Show)</li>
-        <li>✔️ Transmissão de Cultos e Eventos</li>
-        <li>✔️ Preparando uma Nova Geração</li>
-        <li>✔️ Mentalidade de Conteúdo</li>
-        <li>✔️ Gestão da Equipe de Mídia</li>
-      </ul>
-      <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" style="margin-top: 20px; background: #A5BF6B; color: #1F1F1F; font-weight: 700; padding: 15px 30px; text-decoration: none; border-radius: 8px;">Quero garantir meu guia</a>
-    </div>
-
-    <!-- Garantia -->
-    <div style="padding: 40px; background: #F2F2DA; display: flex; justify-content: center;">
-      <img src="garantia.png" alt="7 dias de garantia" style="max-width: 300px;" />
-    </div>
-
-    <!-- Rodapé -->
-    <footer style="background: #1F1F1F; color: #F2F2DA; padding: 40px; text-align: center;">
-      &copy; 2025 Feijão Criativo · Todos os direitos reservados.
-    </footer>
   </div>
+
+  <div class="section">
+    <h2 style="color: #548151; font-size: 32px; font-weight: 700;">Você que cuida da Mídia</h2>
+    <p style="font-size: 18px; max-width: 700px; margin: 0 auto;">👉 Planejamento? Quase impossível.<br>👉 Criatividade? Vai embora quando a semana começa.<br>👉 Resultados? Você nem sabe mais o que é isso.<br><br>Você ama servir sua igreja, mas sabe que a comunicação poderia ser muito melhor se você tivesse uma direção clara.</p>
+  </div>
+
+  <div class="section dark">
+    <img src="mockup.png" alt="Mockup do Ebook" class="mockup">
+    <h2>Um guia completo criado por quem entende como é a rotina das igrejas.</h2>
+    <ul>
+      <li>✔️ Calendário estratégico cristão</li>
+      <li>✔️ Dicas pra Instagram, telão, stories e reels</li>
+      <li>✔️ Ferramentas gratuitas pra ganhar tempo</li>
+      <li>✔️ Exemplos prontos pra adaptar</li>
+      <li>✔️ Zero enrolação: direto ao ponto</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2 style="font-family: 'Transforma Mix'; font-size: 48px; color: #688D3B;">Tudo isso por apenas R$46,90</h2>
+    <ul>
+      <li>✔️ Propósitos Fundamentais da Mídia Cristã</li>
+      <li>✔️ Redes Sociais para Igrejas</li>
+      <li>✔️ Estratégias de Conteúdo</li>
+      <li>✔️ Processo Criativo – PACOTE ÓRIO</li>
+      <li>✔️ Cobertura de Cultos e Eventos</li>
+      <li>✔️ Planejamento Estratégico de Conteúdo</li>
+      <li>✔️ Comunicação Interna Eficiente</li>
+      <li>✔️ Projeção com Excelência (Data Show)</li>
+      <li>✔️ Transmissão de Cultos e Eventos</li>
+      <li>✔️ Preparando uma Nova Geração</li>
+      <li>✔️ Mentalidade de Conteúdo</li>
+      <li>✔️ Gestão da Equipe de Mídia</li>
+    </ul>
+    <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="btn" style="background-color: #A5BF6B; color: #1F1F1F; margin-top: 30px;">Garantir meu Ebook agora!</a>
+  </div>
+
+  <div class="section">
+    <img src="garantia.png" alt="7 dias de garantia" style="max-width: 300px;">
+    <p style="margin-top: 20px; font-size: 16px; max-width: 500px; margin: 0 auto;">Você tem 7 dias de garantia. Se não gostar, devolvemos 100% do seu dinheiro.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 Feijão Criativo · Todos os direitos reservados.
+  </footer>
 </body>
 </html>
