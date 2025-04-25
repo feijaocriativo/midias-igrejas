@@ -88,26 +88,58 @@
       font-family: 'Transforma Mix';
       margin-bottom: 20px;
     }
-    .price-box {
-      background: #000;
-      color: #F2F2DA;
-      padding: 40px;
-      text-align: center;
-    }
-    .price-box h2 {
-      color: #A5BF6B;
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    .price-box ul {
-      list-style: none;
-      padding: 0;
-      text-align: left;
-      max-width: 600px;
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      max-width: 1140px;
       margin: 0 auto;
     }
-    .price-box ul li {
-      margin-bottom: 10px;
+    .two-columns img {
+      flex: 1 1 40%;
+      max-width: 500px;
+      height: auto;
+    }
+    .two-columns .content {
+      flex: 1 1 50%;
+      text-align: left;
+    }
+    .faq {
+      background-color: #F2F2DA;
+      padding: 60px 20px;
+    }
+    .faq h2 {
+      text-align: center;
+      font-size: 32px;
+      font-family: 'Transforma Mix';
+      margin-bottom: 30px;
+    }
+    .accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .accordion-item {
+      border-bottom: 1px solid #ccc;
+    }
+    .accordion-header {
+      background: none;
+      border: none;
+      padding: 20px;
+      width: 100%;
+      text-align: left;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .accordion-body {
+      padding: 0 20px 20px;
+      display: none;
+      font-size: 16px;
+    }
+    .accordion-item.active .accordion-body {
+      display: block;
     }
     footer {
       background: #1F1F1F;
@@ -134,9 +166,13 @@
     </section>
 
     <section class="section dark">
-      <img src="mockup.png" alt="Mockup eBook" style="width: 100%; max-width: 600px; margin-bottom: 40px;" />
-      <h2>Um guia completo criado por quem entende a rotina das igrejas</h2>
-      <p style="max-width: 600px; margin: 0 auto;">✔️ Calendário de conteúdo estratégico e cristão<br>✔️ Dicas práticas pra Instagram, telão, stories e reels<br>✔️ Ferramentas gratuitas pra ganhar tempo<br>✔️ Exemplos prontos pra adaptar ao seu ministério<br>✔️ Zero enrolação: direto ao ponto e fácil de aplicar</p>
+      <div class="two-columns">
+        <img src="mockup.png" alt="Mockup eBook">
+        <div class="content">
+          <h2>Um guia completo criado por quem entende a rotina das igrejas</h2>
+          <p>✔️ Calendário de conteúdo estratégico e cristão<br>✔️ Dicas práticas pra Instagram, telão, stories e reels<br>✔️ Ferramentas gratuitas pra ganhar tempo<br>✔️ Exemplos prontos pra adaptar ao seu ministério<br>✔️ Zero enrolação: direto ao ponto e fácil de aplicar</p>
+        </div>
+      </div>
     </section>
 
     <section class="price-box" id="preco">
@@ -163,9 +199,38 @@
       <p style="margin-top: 20px; max-width: 600px;">Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
     </section>
 
+    <section class="faq">
+      <h2>Perguntas Frequentes</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">Como recebo o ebook?</button>
+          <div class="accordion-body">Após a compra, o acesso ao conteúdo é enviado imediatamente por e-mail.</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">É possível pagar no boleto?</button>
+          <div class="accordion-body">Sim! A Hotmart aceita boleto, cartão, pix e outras formas de pagamento.</div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">Preciso ter experiência com mídias sociais?</button>
+          <div class="accordion-body">Não. O conteúdo foi pensado tanto para iniciantes quanto para quem já atua com comunicação na igreja.</div>
+        </div>
+      </div>
+    </section>
+
     <footer>
       &copy; 2025 Feijão Criativo · Todos os direitos reservados.
     </footer>
   </div>
+
+  <script>
+    function toggleAccordion(element) {
+      const item = element.parentElement;
+      const allItems = document.querySelectorAll('.accordion-item');
+      allItems.forEach(i => {
+        if (i !== item) i.classList.remove('active');
+      });
+      item.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
