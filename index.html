@@ -47,9 +47,9 @@
       background-size: cover;
       min-height: 753px;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: flex-end;
-      padding: 0 80px;
+      padding: 0 80px 100px;
       color: #F2F2DA;
     }
     .hero h1 {
@@ -58,22 +58,26 @@
       font-weight: 800;
       text-align: right;
       max-width: 600px;
+      color: #1E201F;
     }
     .hero p {
       font-size: 20px;
       margin-top: 20px;
       text-align: right;
       max-width: 500px;
+      color: #F2F2DA;
     }
     .cta {
-      margin-top: 40px;
+      margin-top: 20px;
       display: inline-block;
       background: linear-gradient(191deg, #1E201F 0%, #688D3B 100%);
-      padding: 20px 40px;
+      padding: 16px 36px;
       color: #F2F2DA;
       font-weight: 800;
+      font-size: 16px;
       letter-spacing: 1.8px;
       text-decoration: none;
+      margin-left: auto;
     }
     .section {
       padding: 60px 20px;
@@ -105,6 +109,36 @@
     .two-columns .content {
       flex: 1 1 50%;
       text-align: left;
+    }
+    .price-box {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #1F1F1F;
+      color: #F2F2DA;
+    }
+    .price-box .price-highlight {
+      font-size: 96px;
+      font-weight: 900;
+      position: relative;
+      line-height: 1;
+      display: inline-block;
+    }
+    .price-box .price-highlight small {
+      font-size: 24px;
+      font-weight: 700;
+      position: absolute;
+      top: -20px;
+      left: -24px;
+    }
+    .price-box ul {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: 40px auto;
+      text-align: left;
+    }
+    .price-box ul li {
+      margin-bottom: 10px;
     }
     .faq {
       background-color: #F2F2DA;
@@ -155,7 +189,7 @@
       <div>
         <h1>CHEGA DE IMPROVISO:<br>sua igreja merece uma<br>mídia com propósito</h1>
         <p>Um guia prático e estratégico pra você<br>sair da correria e começar a comunicar<br>sua igreja com clareza e consistência.</p>
-        <a class="cta" href="#preco">EU QUERO MUDAR</a>
+        <a class="cta" href="#preco">quero começar agora</a>
       </div>
     </section>
 
@@ -176,7 +210,9 @@
     </section>
 
     <section class="price-box" id="preco">
-      <h2>apenas R$46,90</h2>
+      <div class="price-highlight">
+        <small>R$</small>46<small>,90</small>
+      </div>
       <ul>
         <li>✔️ Propósitos Fundamentais da Mídia Cristã</li>
         <li>✔️ Redes Sociais para Igrejas</li>
@@ -196,7 +232,7 @@
 
     <section class="section">
       <img src="garantia.png" alt="7 dias de garantia" style="max-width: 300px;" />
-      <p style="margin-top: 20px; max-width: 600px;">Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
+      <p style="margin-top: 20px; max-width: 600px; font-weight: 400; font-size: 18px; line-height: 1.5;">Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
     </section>
 
     <section class="faq">
