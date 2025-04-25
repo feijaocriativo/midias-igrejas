@@ -1,211 +1,373 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page - Mídias na Igreja</title>
-  <link rel="stylesheet" href="main.css">
-  <link rel="preload" href="TransformaSans_Trial-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="TransformaMix_Trial-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-  <style>
-    body {
-      background: url('Preenchimento de Cor 1 copiar.png') repeat;
-      background-size: cover;
-      background-blend-mode: multiply;
-      font-family: 'Transforma Sans_Trial', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-    .hero {
-      background: url('Cabeçalho.png') no-repeat center center;
-      background-size: cover;
-      padding: 100px 20px;
-      color: #F2F2DA;
-      text-align: right;
-    }
-    .hero h1 .bold-dark {
-      color: #1E201F;
-      font-weight: 900;
-    }
-    .hero h1 .bold-light {
-      color: #F2F2DA;
-      font-weight: 600;
-    }
-    .cta-button {
-      display: inline-block;
-      background: linear-gradient(191deg, #1E201F, #688D3B);
-      color: #F2F2DA;
-      padding: 15px 30px;
-      font-weight: 800;
-      text-decoration: none;
-      margin-top: 20px;
-    }
-    .problem-section {
-      background-color: #F2F2DA;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .problem-section .highlight {
-      color: #548151;
-    }
-    .solution-section {
-      background: linear-gradient(214deg, #275C76, #1F1F1F);
-      color: #F2F2DA;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: center;
-      padding: 60px 20px;
-    }
-    .solution-image {
-      max-width: 450px;
-      width: 100%;
-    }
-    .solution-text {
-      max-width: 600px;
-    }
-    .solution-text ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .solution-text li::before {
-      content: '✔️ ';
-    }
-    .price-section {
-      background-color: #1F1F1F;
-      color: #A5BF6B;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .price-text {
-      font-size: 48px;
-    }
-    .price-rs {
-      font-size: 16px;
-      vertical-align: super;
-    }
-    .price-cents {
-      font-size: 16px;
-      vertical-align: super;
-    }
-    .cta-buy {
-      display: inline-block;
-      background: linear-gradient(190deg, #688D3B, #A5BF6B);
-      color: #1F1F1F;
-      padding: 15px 30px;
-      font-weight: 800;
-      text-decoration: none;
-      margin-top: 20px;
-    }
-    .guarantee-section {
-      background-color: #F2F2DA;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .faq-section {
-      background-color: #F2F2DA;
-      padding: 60px 20px;
-    }
-    .faq h2 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .faq details {
-      margin-bottom: 10px;
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- Cabeçalho -->
-    <header class="hero">
-      <div class="hero-text">
-        <h1>
-          <span class="bold-dark">CHEGA DE IMPROVISO:</span><br>
-          <span class="bold-light">sua igreja merece uma<br>mídia com propósito</span>
-        </h1>
-        <p>Um guia prático e estratégico pra você sair da correria e começar a comunicar sua igreja com clareza e consistência.</p>
-        <a href="#preco" class="cta-button">EU QUERO MUDAR</a>
-      </div>
-    </header>
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, Check } from "lucide-react";
+import React from "react";
 
-    <!-- Seção de Dor -->
-    <section class="problem-section">
-      <h2>
-        Você que cuida da <span class="highlight">Mídia</span><br>
-        mas sente que está sempre <span class="highlight">apagando incêndios?</span>
-      </h2>
-      <div class="problem-texts">
-        <p>👉 Planejamento? Quase impossível.<br>
-        👉 Criatividade? Vai embora quando a semana começa.<br>
-        👉 Resultados? Você nem sabe mais o que é isso.</p>
-        <p>Você ama servir sua igreja, mas sabe que a comunicação poderia ser muito melhor se você tivesse uma direção clara.</p>
-      </div>
-    </section>
+// Define content data for reusability
+const features = [
+  "Propósitos Fundamentais da Mídia Cristã",
+  "Redes Sociais para Igrejas",
+  "Estratégias de Conteúdo",
+  "Processo Criativo – PACOTE ÓRIO",
+  "Cobertura de Cultos e Eventos",
+  "Planejamento Estratégico de Conteúdo",
+  "Comunicação Interna Eficiente",
+  "Projeção com Excelência (Data Show)",
+  "Transmissão de Cultos e Eventos",
+  "Preparando uma Nova Geração",
+  "Mentalidade de Conteúdo",
+  "Gestão da Equipe de Mídia",
+];
 
-    <!-- Seção de Solução -->
-    <section class="solution-section">
-      <img src="mockup.png" alt="Mockup do ebook" class="solution-image">
-      <div class="solution-text">
-        <h3>Um guia completo criado por quem entende como é a <span class="highlight">rotina das igrejas.</span></h3>
-        <ul>
-          <li>Calendário de conteúdo estratégico e cristão</li>
-          <li>Dicas práticas pra Instagram, telão, stories e reels</li>
-          <li>Ferramentas gratuitas pra ganhar tempo</li>
-          <li>Exemplos prontos pra adaptar ao seu ministério</li>
-          <li>Zero enrolação: direto ao ponto e fácil de aplicar</li>
-        </ul>
-      </div>
-    </section>
+const benefits = [
+  "Calendário de conteúdo estratégico e cristão",
+  "Dicas práticas pra Instagram, telão, stories e reels",
+  "Ferramentas gratuitas pra ganhar tempo",
+  "Exemplos prontos pra adaptar ao seu ministério",
+  "Zero enrolação: direto ao ponto e fácil de aplicar",
+];
 
-    <!-- Preço -->
-    <section class="price-section" id="preco">
-      <div class="price-wrapper">
-        <p class="price-text">
-          <span class="price-rs">R$</span>
-          <span class="price-big">46</span>
-          <span class="price-cents">,90</span>
-        </p>
-        <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="cta-buy">Garantir meu Ebook agora!</a>
-      </div>
-    </section>
+const painPoints = [
+  "Planejamento? Quase impossível.",
+  "Criatividade? Vai embora quando a semana começa.",
+  "Resultados? Você nem sabe mais o que é isso.",
+];
 
-    <!-- Garantia -->
-    <section class="guarantee-section">
-      <img src="garantia.png" alt="Selo de garantia de 7 dias" class="guarantee-img">
-      <p class="guarantee-text">Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
-    </section>
+export default function DivElementor(): JSX.Element {
+  return (
+    <div className="flex flex-col items-center">
+      <img className="w-full h-8" alt="Blocos inferiores" src="" />
 
-    <!-- Perguntas Frequentes -->
-    <section class="faq-section">
-      <h2>Dúvidas Frequentes</h2>
-      <div class="faq">
-        <details>
-          <summary>O que é o ebook?</summary>
-          <p>É um guia estratégico e prático com exemplos prontos e direcionamento cristão para mídia nas igrejas.</p>
-        </details>
-        <details>
-          <summary>Quando terei acesso?</summary>
-          <p>Assim que o pagamento for confirmado, o acesso é enviado automaticamente para seu e-mail.</p>
-        </details>
-        <details>
-          <summary>Como funciona a garantia?</summary>
-          <p>Você tem até 7 dias após a compra para pedir reembolso sem burocracia.</p>
-        </details>
-        <details>
-          <summary>É só para grandes igrejas?</summary>
-          <p>Não! Esse material serve para qualquer igreja, independentemente do tamanho.</p>
-        </details>
-      </div>
-    </section>
-  </div>
-</body>
-</html>
+      {/* Hero Section */}
+      <section className="w-full flex flex-col items-center justify-center bg-[url(/div-elementor-element.png)] bg-cover bg-center min-h-[750px]">
+        <div className="container flex flex-col items-end justify-around py-2.5 max-w-7xl">
+          <div className="flex flex-col items-end justify-center gap-6 pt-[69px] pb-[152px] px-2.5 w-full md:w-[939px]">
+            <div className="flex flex-col items-start w-full md:w-[570px]">
+              <div className="flex flex-col items-end justify-center w-full">
+                <div className="flex flex-col items-start w-full">
+                  <h1 className="text-right text-4xl leading-[46.2px] tracking-tight overflow-hidden">
+                    <span className="font-[950] text-[#1e201f]">
+                      CHEGA DE IMPROVISO:
+                      <br />
+                    </span>
+                    <span className="font-semibold text-[#f2f2da]">
+                      sua igreja merece uma
+                      <br />
+                      mídia com propósito
+                    </span>
+                  </h1>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-end w-full md:w-[463px] pl-2 pr-2.5 pb-[30px]">
+              <div className="w-full md:w-[500px] -ml-[56px]">
+                <div className="flex flex-col items-start">
+                  <p className="font-semibold text-[#f2f2da] text-xl text-right tracking-tight leading-[19.2px]">
+                    Um guia prático e estratégico pra você
+                    <br />
+                    sair da correria e começar a comunicar
+                    <br />
+                    sua igreja com clareza e consistência.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-end w-full md:w-[570px]">
+              <div className="flex flex-col items-end justify-center py-[19px] w-[342px] -mb-[73px]">
+                <div className="flex flex-col items-start w-full">
+                  <Button className="flex items-center justify-end px-[60px] py-5 -mr-[206px] bg-gradient-to-br from-[#1e201f] to-[#688d3b]">
+                    <span className="font-[950] text-[#f2f2da] text-base tracking-[1.8px] leading-[15px]">
+                      EU QUERO MUDAR
+                    </span>
+                    <ArrowRight className="ml-1 h-[15px] w-[15px]" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pain Points Section */}
+      <section className="w-full flex flex-col items-center pt-7 bg-[#f2f2da]">
+        <div className="container flex flex-col items-center justify-center gap-5 py-2.5 max-w-6xl">
+          <div className="w-full flex flex-col items-start pb-3.5">
+            <div className="w-full flex flex-col items-start">
+              <div className="w-full flex flex-col items-center">
+                <h2 className="text-center text-3xl font-bold leading-[35.2px] tracking-tight">
+                  <span className="text-[#1f1f1f]">Você que cuida da </span>
+                  <span className="text-[#548151]">Mídia</span>
+                </h2>
+                <h2 className="text-center text-3xl font-bold leading-[35.2px] tracking-tight">
+                  <span className="text-[#1f1f1f]">
+                    mas sente que está
+                    <br />
+                    sempre{" "}
+                  </span>
+                  <span className="text-[#548151]">apagando incêndios?</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col items-start">
+            <div className="w-full flex flex-col items-start">
+              <div className="w-full flex flex-col items-center gap-5">
+                <div className="text-[#1f1f1f] text-lg text-center leading-[21.6px] tracking-tight">
+                  {painPoints.map((point, index) => (
+                    <p key={index}>👉 {point}</p>
+                  ))}
+                </div>
+
+                <p className="text-[#1f1f1f] text-lg text-center leading-[21.6px] tracking-tight">
+                  Você ama servir sua igreja, mas sabe que a comunicação
+                  <br />
+                  poderia ser muito melhor se você tivesse uma direção clara.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Guide Features Section */}
+          <div className="w-full flex flex-col items-center pt-6">
+            <div className="w-full flex items-center justify-center p-3 bg-gradient-to-br from-[#275c76] to-[#1f1f1f]">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-8 container max-w-6xl">
+                <div className="flex-1">
+                  <div className="relative w-full h-[271px] flex items-center justify-center">
+                    <img
+                      src=""
+                      alt="Guia de Mídia para Igrejas"
+                      className="max-w-full h-auto"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col items-start flex-1 pl-2.5 pr-[72.4px]">
+                  <div className="flex flex-col items-start pb-9">
+                    <h2 className="font-semibold text-3xl leading-9 tracking-tight">
+                      <span className="text-[#f2f2da]">
+                        Um guia completo
+                        <br />
+                        criado por quem
+                        <br />
+                        entende como é a<br />
+                      </span>
+                      <span className="text-[#548151]">
+                        rotina das igrejas.
+                      </span>
+                    </h2>
+                  </div>
+
+                  <div className="flex flex-col items-start w-full">
+                    <div className="flex flex-col items-start w-full">
+                      <ul className="space-y-4 text-[#f2f2da] text-[15px] leading-[18px] tracking-tight">
+                        {benefits.map((benefit, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="mr-1">√</span>
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col items-start pt-[70px] pb-3.5">
+            <div className="w-full flex flex-col items-start gap-3.5 -mb-[67px]">
+              <div className="w-full flex flex-col items-center">
+                <h2 className="text-center text-3xl font-extrabold leading-[19.2px] tracking-tight whitespace-nowrap">
+                  <span className="text-[#548151]">Digital, prático </span>
+                  <span className="text-[#1f1f1f]">e com acesso</span>
+                  <span className="text-[#548151]"> imediato!</span>
+                </h2>
+              </div>
+              <div className="h-5"></div>
+              <div className="h-5"></div>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col items-start">
+            <div className="w-full flex flex-col items-start -mb-[269px]">
+              <div className="relative w-full h-[323px]">
+                <p className="absolute top-[9px] left-1/2 transform -translate-x-1/2 text-[#1f1f1f] text-lg text-center leading-[21.6px] tracking-tight">
+                  Depois de comprar, o acesso chega no seu e-mail em segundos.
+                  <br /> Você pode começar agora mesmo, sem depender de ninguém.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Created By Section */}
+      <section className="w-full flex flex-col items-center bg-[#f2f2da]">
+        <div className="container max-w-6xl">
+          <div className="w-full flex flex-col items-start pt-3 pb-0">
+            <div className="w-full flex flex-col items-start gap-3.5 pb-7">
+              <div className="w-full flex flex-col items-center">
+                <h2 className="text-center text-3xl font-semibold leading-[20.4px] tracking-tight whitespace-nowrap">
+                  <span className="text-[#1f1f1f]">Criado por quem </span>
+                  <span className="text-[#548151]">vive</span>
+                </h2>
+              </div>
+              <div className="w-full flex flex-col items-center">
+                <h2 className="text-center text-3xl font-semibold leading-[20.4px] tracking-tight whitespace-nowrap">
+                  na realidade da igreja
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col items-start pt-20 pb-0">
+            <div className="w-full flex flex-col items-start gap-3.5 pb-7">
+              <div className="w-full flex flex-col items-center">
+                <p className="text-center text-[#1f1f1f] leading-[33px] tracking-tight">
+                  <span className="font-semibold">
+                    Não é teoria: é prática de quem já passou por isso. Esse
+                    guia nasceu da vivência real e do{" "}
+                  </span>
+                  <span className="font-bold text-[#548151]">
+                    desejo de
+                    <br />
+                    ver a igreja se comunicar melhor
+                  </span>
+                  <span className="font-semibold"> com o mundo.</span>
+                </p>
+              </div>
+              <div className="h-7"></div>
+            </div>
+          </div>
+
+          {/* Pricing Card */}
+          <Card className="w-full max-w-[570px] mx-auto border border-[#ffffff6e] bg-gradient-to-b from-[#1f1f1f] to-black">
+            <CardContent className="flex flex-col items-center gap-5 p-8">
+              <div className="w-full flex flex-col items-start pb-6">
+                <div className="w-full flex flex-col items-center">
+                  <div className="w-full flex flex-col items-start gap-6">
+                    <div className="w-full flex flex-col items-start pb-3.5">
+                      <div className="w-full flex flex-col items-start">
+                        <div className="w-full flex flex-col items-center">
+                          <div className="text-center">
+                            <span className="font-semibold text-[#a5bf6b] text-2xl leading-6 tracking-tight">
+                              apenas
+                              <br />
+                            </span>
+                            <span className="font-bold text-[#a5bf6b] text-base tracking-tight">
+                              R$
+                            </span>
+                            <span className="font-black text-[#688d3b] text-8xl tracking-[-10.56px] leading-[48px]">
+                              46
+                            </span>
+                            <span className="font-bold text-[#a5bf6b] text-base tracking-tight">
+                              ,90
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full flex flex-col items-start">
+                <div className="w-full flex flex-col items-start">
+                  <div className="w-full flex flex-col items-start gap-[5px]">
+                    {features.map((feature, index) => (
+                      <div
+                        key={index}
+                        className="w-full flex items-center pb-[5px]"
+                      >
+                        <Check className="h-[17px] w-[17px] text-[#a5bf6b]" />
+                        <span className="ml-[5px] font-normal text-[#f2f2da] text-[15px] leading-4 tracking-tight">
+                          {feature}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full">
+                <Button className="w-full py-6 bg-gradient-to-br from-[#688d3b] to-[#a5bf6b] hover:from-[#5a7a33] hover:to-[#94ab60] text-[#1f1f1f]">
+                  <span className="font-black text-[17px] leading-[17px] tracking-tight">
+                    Garantir meu Ebook agora!
+                  </span>
+                  <ArrowRight className="ml-1 h-[17px] w-[17px]" />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* 7 Days Guarantee */}
+          <div className="w-full flex flex-col items-start pt-[52px]">
+            <div className="w-full flex flex-col items-center justify-center py-8">
+              <img
+                className="w-[399px] h-auto"
+                alt="7 dias de garantia"
+                src=""
+              />
+            </div>
+          </div>
+
+          <div className="w-full max-w-[570px] mx-auto">
+            <div className="w-full flex flex-col items-start">
+              <div className="w-full flex flex-col items-center">
+                <p className="text-[#1f1f1f] text-lg text-center leading-[23.4px] tracking-tight">
+                  <span className="font-light">
+                    Assinando agora você terá acesso imediato, se em{" "}
+                  </span>
+                  <span className="font-normal">7 dias</span>
+                </p>
+                <p className="text-[#1f1f1f] text-lg text-center leading-[23.4px] tracking-tight">
+                  <span>acessando</span>
+                  <span className="font-light">
+                    {" "}
+                    você não gostar, nós devolvemos todo
+                    <br />
+                    seu dinheiro de forma simples e segura.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Final CTA */}
+          <div className="w-full flex flex-col items-start pt-[70px]">
+            <div className="w-full flex flex-col items-center">
+              <h2 className="text-center text-4xl font-semibold text-[#1f1f1f] leading-[21.6px] tracking-tight whitespace-nowrap">
+                Não perca tempo
+              </h2>
+            </div>
+          </div>
+
+          <div className="w-full max-w-[912px] mx-auto my-8">
+            <div className="w-full flex flex-col items-start">
+              <div className="w-full flex flex-col items-center">
+                <Button className="px-[60px] py-[23px] bg-[#a5bf6b] hover:bg-[#94ab60] text-[#1f1f1f]">
+                  <span className="font-bold text-base leading-[17px] tracking-tight">
+                    Compre agora e não perca mais tempo!
+                  </span>
+                  <ArrowRight className="ml-1 h-[17px] w-[17px]" />
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer */}
+          <div className="w-full flex flex-col items-start pt-5 pb-[100px]">
+            <div className="w-full flex flex-col items-center justify-center">
+              <div className="w-[250.8px] h-[47.02px]">
+                <img src="" alt="Logo" className="w-full h-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
