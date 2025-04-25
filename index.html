@@ -12,6 +12,114 @@
       background: url('Preenchimento de Cor 1 copiar.png') repeat;
       background-size: cover;
       background-blend-mode: multiply;
+      font-family: 'Transforma Sans_Trial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    .hero {
+      background: url('Cabeçalho.png') no-repeat center center;
+      background-size: cover;
+      padding: 100px 20px;
+      color: #F2F2DA;
+      text-align: right;
+    }
+    .hero h1 .bold-dark {
+      color: #1E201F;
+      font-weight: 900;
+    }
+    .hero h1 .bold-light {
+      color: #F2F2DA;
+      font-weight: 600;
+    }
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(191deg, #1E201F, #688D3B);
+      color: #F2F2DA;
+      padding: 15px 30px;
+      font-weight: 800;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    .problem-section {
+      background-color: #F2F2DA;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .problem-section .highlight {
+      color: #548151;
+    }
+    .solution-section {
+      background: linear-gradient(214deg, #275C76, #1F1F1F);
+      color: #F2F2DA;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      padding: 60px 20px;
+    }
+    .solution-image {
+      max-width: 450px;
+      width: 100%;
+    }
+    .solution-text {
+      max-width: 600px;
+    }
+    .solution-text ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .solution-text li::before {
+      content: '✔️ ';
+    }
+    .price-section {
+      background-color: #1F1F1F;
+      color: #A5BF6B;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .price-text {
+      font-size: 48px;
+    }
+    .price-rs {
+      font-size: 16px;
+      vertical-align: super;
+    }
+    .price-cents {
+      font-size: 16px;
+      vertical-align: super;
+    }
+    .cta-buy {
+      display: inline-block;
+      background: linear-gradient(190deg, #688D3B, #A5BF6B);
+      color: #1F1F1F;
+      padding: 15px 30px;
+      font-weight: 800;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    .guarantee-section {
+      background-color: #F2F2DA;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .faq-section {
+      background-color: #F2F2DA;
+      padding: 60px 20px;
+    }
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .faq details {
+      margin-bottom: 10px;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
     }
   </style>
 </head>
@@ -45,18 +153,16 @@
 
     <!-- Seção de Solução -->
     <section class="solution-section">
-      <div class="solution-wrapper">
-        <img src="mockup.png" alt="Mockup do ebook" class="solution-image">
-        <div class="solution-text">
-          <h3>Um guia completo criado por quem entende como é a <span class="highlight">rotina das igrejas.</span></h3>
-          <ul>
-            <li>✔️ Calendário de conteúdo estratégico e cristão</li>
-            <li>✔️ Dicas práticas pra Instagram, telão, stories e reels</li>
-            <li>✔️ Ferramentas gratuitas pra ganhar tempo</li>
-            <li>✔️ Exemplos prontos pra adaptar ao seu ministério</li>
-            <li>✔️ Zero enrolação: direto ao ponto e fácil de aplicar</li>
-          </ul>
-        </div>
+      <img src="mockup.png" alt="Mockup do ebook" class="solution-image">
+      <div class="solution-text">
+        <h3>Um guia completo criado por quem entende como é a <span class="highlight">rotina das igrejas.</span></h3>
+        <ul>
+          <li>Calendário de conteúdo estratégico e cristão</li>
+          <li>Dicas práticas pra Instagram, telão, stories e reels</li>
+          <li>Ferramentas gratuitas pra ganhar tempo</li>
+          <li>Exemplos prontos pra adaptar ao seu ministério</li>
+          <li>Zero enrolação: direto ao ponto e fácil de aplicar</li>
+        </ul>
       </div>
     </section>
 
