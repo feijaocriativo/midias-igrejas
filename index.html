@@ -23,12 +23,14 @@
     }
     @font-face {
       font-family: 'Transforma Mix';
-      src: url('TransformaMix_Trial-Regular.woff2') format('woff2');
+      src: url('TransformaMix_Trial-Regular.woff2') format('woff2'),
+           url('TransformaMix_Trial-Regular.woff') format('woff');
       font-weight: 400;
     }
     @font-face {
       font-family: 'Transforma Mix';
-      src: url('TransformaMix_Trial-Bold.woff2') format('woff2');
+      src: url('TransformaMix_Trial-Bold.woff2') format('woff2'),
+           url('TransformaMix_Trial-Bold.woff') format('woff');
       font-weight: 700;
     }
 
@@ -95,7 +97,7 @@
     }
     .section h2 {
       font-size: 32px;
-      font-family: 'Transforma Mix';
+      font-family: 'Transforma Mix', sans-serif;
       margin-bottom: 20px;
     }
     .two-columns {
@@ -158,7 +160,7 @@
     .faq h2 {
       text-align: center;
       font-size: 32px;
-      font-family: 'Transforma Mix';
+      font-family: 'Transforma Mix', sans-serif;
       margin-bottom: 30px;
     }
     .accordion {
@@ -187,6 +189,25 @@
     }
     .accordion-item.active .accordion-body {
       display: block;
+    }
+    .guarantee {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .guarantee img {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+    .guarantee p {
+      max-width: 600px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.5;
+      font-family: 'Transforma Sans';
     }
     footer {
       background: #1F1F1F;
@@ -259,9 +280,9 @@
       <a class="cta" href="https://pay.hotmart.com/D98721279A?checkoutMode=10">Garantir meu Ebook agora!</a>
     </section>
 
-    <section class="section">
-      <img src="garantia.png" alt="7 dias de garantia" style="max-width: 300px;" />
-      <p style="margin-top: 20px; max-width: 600px; font-weight: 400; font-size: 18px; line-height: 1.5; font-family: 'Transforma Sans';">Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
+    <section class="guarantee">
+      <img src="garantia.png" alt="7 dias de garantia" />
+      <p>Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
     </section>
 
     <section class="faq">
