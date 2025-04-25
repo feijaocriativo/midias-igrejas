@@ -4,185 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landing Page - Mídias na Igreja</title>
-  <style>
-    @font-face {
-      font-family: 'Transforma Sans';
-      src: url('TransformaSans_Trial-Regular.woff2') format('woff2');
-      font-weight: 400;
-    }
-    @font-face {
-      font-family: 'Transforma Sans';
-      src: url('TransformaSans_Trial-Bold.woff2') format('woff2');
-      font-weight: 700;
-    }
-    @font-face {
-      font-family: 'Transforma Sans';
-      src: url('TransformaSans_Trial-ExtraBold.woff2') format('woff2');
-      font-weight: 800;
-    }
-    @font-face {
-      font-family: 'Transforma Mix';
-      src: url('TransformaMix_Trial-Regular.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-    }
-    @font-face {
-      font-family: 'Transforma Mix';
-      src: url('TransformaMix_Trial-SemiBold.woff2') format('woff2');
-      font-weight: 600;
-      font-style: normal;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Transforma Sans', sans-serif;
-      background-color: #F2F2DA;
-      color: #1F1F1F;
-    }
-    .textured {
-      background-image: url('Preenchimento de Cor 1 copiar.png');
-      background-repeat: repeat;
-      background-size: 300px auto;
-      background-blend-mode: multiply;
-    }
-    .hero {
-      background: url('Cabeçalho.png') no-repeat center center;
-      background-size: cover;
-      min-height: 753px;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 60px 5vw;
-      text-align: right;
-    }
-    .hero-content {
-      max-width: 600px;
-      animation: fadeInUp 1s ease-in-out;
-    }
-    .hero h1 {
-      font-family: 'Transforma Sans';
-      font-size: 42px;
-      font-weight: 800;
-      color: #1E201F;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 20px;
-      color: #F2F2DA;
-      margin-bottom: 30px;
-    }
-    .cta {
-      background: linear-gradient(191deg, #1E201F 0%, #688D3B 100%);
-      padding: 16px 36px;
-      color: #F2F2DA;
-      font-weight: 800;
-      font-size: 16px;
-      letter-spacing: 1.8px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .cta:hover {
-      background: linear-gradient(191deg, #688D3B 0%, #1E201F 100%);
-      transform: scale(1.05);
-    }
-    .price-box {
-      background-color: #1F1F1F;
-      color: #F2F2DA;
-      padding: 60px 20px;
-      text-align: center;
-      animation: fadeIn 1.5s ease;
-    }
-    .price-highlight {
-      display: flex;
-      justify-content: center;
-      align-items: baseline;
-      gap: 6px;
-      font-family: 'Transforma Sans';
-      margin-bottom: 30px;
-    }
-    .price-highlight .currency,
-    .price-highlight .cents {
-      font-size: 24px;
-      font-weight: 700;
-    }
-    .price-highlight .value {
-      font-size: 96px;
-      font-weight: 900;
-    }
-    .price-box ul {
-      list-style: none;
-      padding: 0;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      text-align: left;
-    }
-    .price-box ul li {
-      margin-bottom: 10px;
-    }
-    .guarantee {
-      text-align: center;
-      padding: 60px 20px;
-      animation: fadeInUp 1s ease-in-out;
-    }
-    .guarantee img {
-      max-width: 300px;
-      margin-bottom: 20px;
-    }
-    .guarantee p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 18px;
-      line-height: 1.5;
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <section class="hero">
-    <div class="hero-content">
-      <h1>CHEGA DE IMPROVISO:<br>sua igreja merece uma<br>mídia com propósito</h1>
-      <p>Um guia prático e estratégico pra você sair da correria e começar a comunicar sua igreja com clareza e consistência.</p>
-      <a class="cta" href="#preco">quero começar agora</a>
-    </div>
-  </section>
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="hero">
+      <div class="hero-text">
+        <h1>
+          <span class="bold-dark">CHEGA DE IMPROVISO:</span><br>
+          <span class="bold-light">sua igreja merece uma<br>mídia com propósito</span>
+        </h1>
+        <p>Um guia prático e estratégico pra você sair da correria e começar a comunicar sua igreja com clareza e consistência.</p>
+        <a href="#preco" class="cta-button">EU QUERO MUDAR</a>
+      </div>
+    </header>
 
-  <section class="price-box textured" id="preco">
-    <div class="price-highlight">
-      <span class="currency">R$</span>
-      <span class="value">46</span>
-      <span class="cents">,90</span>
-    </div>
-    <ul>
-      <li>✔️ Calendário de conteúdo estratégico e cristão</li>
-      <li>✔️ Dicas práticas pra Instagram, telão, stories e reels</li>
-      <li>✔️ Ferramentas gratuitas pra ganhar tempo</li>
-      <li>✔️ Exemplos prontos pra adaptar ao seu ministério</li>
-      <li>✔️ Zero enrolação: direto ao ponto e fácil de aplicar</li>
-    </ul>
-    <a class="cta" href="https://pay.hotmart.com/D98721279A?checkoutMode=10">Garantir meu Ebook agora!</a>
-  </section>
+    <!-- Seção de Dor -->
+    <section class="problem-section">
+      <h2>
+        Você que cuida da <span class="highlight">Mídia</span><br>
+        mas sente que está sempre <span class="highlight">apagando incêndios?</span>
+      </h2>
+      <div class="problem-texts">
+        <p>👉 Planejamento? Quase impossível.<br>
+        👉 Criatividade? Vai embora quando a semana começa.<br>
+        👉 Resultados? Você nem sabe mais o que é isso.</p>
+        <p>Você ama servir sua igreja, mas sabe que a comunicação poderia ser muito melhor se você tivesse uma direção clara.</p>
+      </div>
+    </section>
 
-  <section class="guarantee textured">
-    <img src="garantia.png" alt="7 dias de garantia">
-    <p>Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
-  </section>
+    <!-- Seção de Solução -->
+    <section class="solution-section">
+      <div class="solution-wrapper">
+        <img src="mockup.png" alt="Mockup do ebook" class="solution-image">
+        <div class="solution-text">
+          <h3>Um guia completo criado por quem entende como é a <span class="highlight">rotina das igrejas.</span></h3>
+          <ul>
+            <li>✔️ Calendário de conteúdo estratégico e cristão</li>
+            <li>✔️ Dicas práticas pra Instagram, telão, stories e reels</li>
+            <li>✔️ Ferramentas gratuitas pra ganhar tempo</li>
+            <li>✔️ Exemplos prontos pra adaptar ao seu ministério</li>
+            <li>✔️ Zero enrolação: direto ao ponto e fácil de aplicar</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preço -->
+    <section class="price-section" id="preco">
+      <div class="price-wrapper">
+        <p class="price-text">
+          <span class="price-rs">R$</span>
+          <span class="price-big">46</span>
+          <span class="price-cents">,90</span>
+        </p>
+        <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="cta-buy">Garantir meu Ebook agora!</a>
+      </div>
+    </section>
+
+    <!-- Garantia -->
+    <section class="guarantee-section">
+      <img src="garantia.png" alt="Selo de garantia de 7 dias" class="guarantee-img">
+      <p>Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
+    </section>
+
+    <!-- Perguntas Frequentes -->
+    <section class="faq-section">
+      <h2>Dúvidas Frequentes</h2>
+      <div class="faq">
+        <details>
+          <summary>O que é o ebook?</summary>
+          <p>É um guia estratégico e prático com exemplos prontos e direcionamento cristão para mídia nas igrejas.</p>
+        </details>
+        <details>
+          <summary>Quando terei acesso?</summary>
+          <p>Assim que o pagamento for confirmado, o acesso é enviado automaticamente para seu e-mail.</p>
+        </details>
+        <details>
+          <summary>Como funciona a garantia?</summary>
+          <p>Você tem até 7 dias após a compra para pedir reembolso sem burocracia.</p>
+        </details>
+        <details>
+          <summary>É só para grandes igrejas?</summary>
+          <p>Não! Esse material serve para qualquer igreja, independentemente do tamanho.</p>
+        </details>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
