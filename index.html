@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landing Page - Mídias na Igreja</title>
-  <link rel="stylesheet" href="main.css">
   <style>
     @font-face {
       font-family: 'Transforma Sans';
@@ -26,59 +25,55 @@
       src: url('TransformaMix_Trial-Regular.woff2') format('woff2'),
            url('TransformaMix_Trial-Regular.woff') format('woff');
       font-weight: 400;
+      font-style: normal;
     }
     @font-face {
       font-family: 'Transforma Mix';
-      src: url('TransformaMix_Trial-Bold.woff2') format('woff2'),
-           url('TransformaMix_Trial-Bold.woff') format('woff');
-      font-weight: 700;
+      src: url('TransformaMix_Trial-SemiBold.woff2') format('woff2'),
+           url('TransformaMix_Trial-SemiBold.woff') format('woff');
+      font-weight: 600;
+      font-style: normal;
     }
 
-    * {
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Transforma Sans', sans-serif;
       margin: 0;
       padding: 0;
+      font-family: 'Transforma Sans', sans-serif;
       background-color: #F2F2DA;
-    }
-    .container {
-      width: 100%;
-      margin: 0 auto;
+      background-image: url('Preenchimento de Cor 1 copiar.png');
+      background-size: cover;
+      background-blend-mode: multiply;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: #1F1F1F;
     }
     .hero {
       background: url('Cabeçalho.png') no-repeat center center;
       background-size: cover;
       min-height: 753px;
       display: flex;
-      align-items: center;
       justify-content: flex-end;
-      padding: 0 5vw 80px;
-      color: #F2F2DA;
+      align-items: center;
+      padding: 60px 5vw;
       text-align: right;
     }
     .hero-content {
       max-width: 600px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+      animation: fadeInUp 1s ease-in-out;
     }
     .hero h1 {
+      font-family: 'Transforma Sans';
       font-size: 42px;
-      line-height: 1.3;
       font-weight: 800;
       color: #1E201F;
-      margin: 0;
+      margin-bottom: 20px;
     }
     .hero p {
       font-size: 20px;
-      margin-top: 20px;
       color: #F2F2DA;
-      max-width: 500px;
+      margin-bottom: 30px;
     }
     .cta {
-      margin-top: 30px;
       background: linear-gradient(191deg, #1E201F 0%, #688D3B 100%);
       padding: 16px 36px;
       color: #F2F2DA;
@@ -86,56 +81,33 @@
       font-size: 16px;
       letter-spacing: 1.8px;
       text-decoration: none;
+      transition: all 0.3s ease;
     }
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .section.dark {
-      background: linear-gradient(214deg, #275C76 0%, #1F1F1F 100%);
-      color: #F2F2DA;
-    }
-    .section h2 {
-      font-size: 32px;
-      font-family: 'Transforma Mix', sans-serif;
-      margin-bottom: 20px;
-    }
-    .two-columns {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      max-width: 1140px;
-      margin: 0 auto;
-    }
-    .two-columns img {
-      flex: 1 1 40%;
-      max-width: 500px;
-      height: auto;
-    }
-    .two-columns .content {
-      flex: 1 1 50%;
-      text-align: left;
-      font-family: 'Transforma Sans';
+    .cta:hover {
+      background: linear-gradient(191deg, #688D3B 0%, #1E201F 100%);
+      transform: scale(1.05);
     }
     .price-box {
-      padding: 80px 20px;
-      text-align: center;
       background-color: #1F1F1F;
       color: #F2F2DA;
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
     }
     .price-highlight {
       display: flex;
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
       gap: 6px;
       font-family: 'Transforma Sans';
+      margin-bottom: 30px;
     }
     .price-highlight .currency,
     .price-highlight .cents {
       font-size: 24px;
       font-weight: 700;
+      position: relative;
+      top: -10px;
     }
     .price-highlight .value {
       font-size: 96px;
@@ -145,58 +117,16 @@
       list-style: none;
       padding: 0;
       max-width: 700px;
-      margin: 40px auto;
+      margin: 0 auto 40px;
       text-align: left;
-      font-family: 'Transforma Sans';
     }
     .price-box ul li {
       margin-bottom: 10px;
     }
-    .faq {
-      background-color: #F2F2DA;
-      padding: 60px 20px;
-      font-family: 'Transforma Sans';
-    }
-    .faq h2 {
-      text-align: center;
-      font-size: 32px;
-      font-family: 'Transforma Mix', sans-serif;
-      margin-bottom: 30px;
-    }
-    .accordion {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .accordion-item {
-      border-bottom: 1px solid #ccc;
-    }
-    .accordion-header {
-      background: none;
-      border: none;
-      padding: 20px;
-      width: 100%;
-      text-align: left;
-      font-size: 18px;
-      font-weight: 700;
-      cursor: pointer;
-      font-family: 'Transforma Sans';
-    }
-    .accordion-body {
-      padding: 0 20px 20px;
-      display: none;
-      font-size: 16px;
-      font-family: 'Transforma Sans';
-    }
-    .accordion-item.active .accordion-body {
-      display: block;
-    }
     .guarantee {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       text-align: center;
       padding: 60px 20px;
+      animation: fadeInUp 1s ease-in-out;
     }
     .guarantee img {
       max-width: 300px;
@@ -204,119 +134,65 @@
     }
     .guarantee p {
       max-width: 600px;
-      font-weight: 400;
+      margin: 0 auto;
       font-size: 18px;
       line-height: 1.5;
-      font-family: 'Transforma Sans';
     }
-    footer {
-      background: #1F1F1F;
-      color: #F2F2DA;
-      padding: 40px;
-      text-align: center;
-      font-family: 'Transforma Sans';
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-
-    @media (max-width: 768px) {
-      .hero {
-        justify-content: center;
-        text-align: center;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
       }
-      .hero-content {
-        align-items: center;
-      }
-      .two-columns {
-        flex-direction: column;
+      to {
+        opacity: 1;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <section class="hero">
-      <div class="hero-content">
-        <h1>CHEGA DE IMPROVISO:<br>sua igreja merece uma<br>mídia com propósito</h1>
-        <p>Um guia prático e estratégico pra você sair da correria e começar a comunicar sua igreja com clareza e consistência.</p>
-        <a class="cta" href="#preco">quero começar agora</a>
-      </div>
-    </section>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>CHEGA DE IMPROVISO:<br>sua igreja merece uma<br>mídia com propósito</h1>
+      <p>Um guia prático e estratégico pra você sair da correria e começar a comunicar sua igreja com clareza e consistência.</p>
+      <a class="cta" href="#preco">quero começar agora</a>
+    </div>
+  </section>
 
-    <section class="section">
-      <h2>Você que cuida da <span style="color: #548151;">Mídia</span></h2>
-      <p style="max-width: 700px; margin: 0 auto;">👉 Planejamento? Quase impossível.<br>👉 Criatividade? Vai embora quando a semana começa.<br>👉 Resultados? Você nem sabe mais o que é isso.</p>
-      <p style="margin-top: 20px;">Você ama servir sua igreja, mas sabe que a comunicação poderia ser muito melhor se você tivesse uma direção clara.</p>
-    </section>
+  <section class="price-box" id="preco">
+    <div class="price-highlight">
+      <span class="currency">R$</span>
+      <span class="value">46</span>
+      <span class="cents">,90</span>
+    </div>
+    <ul>
+      <li>✔️ Propósitos Fundamentais da Mídia Cristã</li>
+      <li>✔️ Redes Sociais para Igrejas</li>
+      <li>✔️ Estratégias de Conteúdo</li>
+      <li>✔️ Processo Criativo – PACOTE ÓRIO</li>
+      <li>✔️ Cobertura de Cultos e Eventos</li>
+      <li>✔️ Planejamento Estratégico de Conteúdo</li>
+      <li>✔️ Comunicação Interna Eficiente</li>
+      <li>✔️ Projeção com Excelência (Data Show)</li>
+      <li>✔️ Transmissão de Cultos e Eventos</li>
+      <li>✔️ Preparando uma Nova Geração</li>
+      <li>✔️ Mentalidade de Conteúdo</li>
+      <li>✔️ Gestão da Equipe de Mídia</li>
+    </ul>
+    <a class="cta" href="https://pay.hotmart.com/D98721279A?checkoutMode=10">Garantir meu Ebook agora!</a>
+  </section>
 
-    <section class="section dark">
-      <div class="two-columns">
-        <img src="mockup.png" alt="Mockup eBook">
-        <div class="content">
-          <h2>Um guia completo criado por quem entende a rotina das igrejas</h2>
-          <p>✔️ Calendário de conteúdo estratégico e cristão<br>✔️ Dicas práticas pra Instagram, telão, stories e reels<br>✔️ Ferramentas gratuitas pra ganhar tempo<br>✔️ Exemplos prontos pra adaptar ao seu ministério<br>✔️ Zero enrolação: direto ao ponto e fácil de aplicar</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="price-box" id="preco">
-      <div class="price-highlight">
-        <span class="currency">R$</span>
-        <span class="value">46</span>
-        <span class="cents">,90</span>
-      </div>
-      <ul>
-        <li>✔️ Propósitos Fundamentais da Mídia Cristã</li>
-        <li>✔️ Redes Sociais para Igrejas</li>
-        <li>✔️ Estratégias de Conteúdo</li>
-        <li>✔️ Processo Criativo – PACOTE ÓRIO</li>
-        <li>✔️ Cobertura de Cultos e Eventos</li>
-        <li>✔️ Planejamento Estratégico de Conteúdo</li>
-        <li>✔️ Comunicação Interna Eficiente</li>
-        <li>✔️ Projeção com Excelência (Data Show)</li>
-        <li>✔️ Transmissão de Cultos e Eventos</li>
-        <li>✔️ Preparando uma Nova Geração</li>
-        <li>✔️ Mentalidade de Conteúdo</li>
-        <li>✔️ Gestão da Equipe de Mídia</li>
-      </ul>
-      <a class="cta" href="https://pay.hotmart.com/D98721279A?checkoutMode=10">Garantir meu Ebook agora!</a>
-    </section>
-
-    <section class="guarantee">
-      <img src="garantia.png" alt="7 dias de garantia" />
-      <p>Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
-    </section>
-
-    <section class="faq">
-      <h2>Perguntas Frequentes</h2>
-      <div class="accordion">
-        <div class="accordion-item">
-          <button class="accordion-header" onclick="toggleAccordion(this)">Como recebo o ebook?</button>
-          <div class="accordion-body">Após a compra, o acesso ao conteúdo é enviado imediatamente por e-mail.</div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-header" onclick="toggleAccordion(this)">É possível pagar no boleto?</button>
-          <div class="accordion-body">Sim! A Hotmart aceita boleto, cartão, pix e outras formas de pagamento.</div>
-        </div>
-        <div class="accordion-item">
-          <button class="accordion-header" onclick="toggleAccordion(this)">Preciso ter experiência com mídias sociais?</button>
-          <div class="accordion-body">Não. O conteúdo foi pensado tanto para iniciantes quanto para quem já atua com comunicação na igreja.</div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      &copy; 2025 Feijão Criativo · Todos os direitos reservados.
-    </footer>
-  </div>
-
-  <script>
-    function toggleAccordion(element) {
-      const item = element.parentElement;
-      const allItems = document.querySelectorAll('.accordion-item');
-      allItems.forEach(i => {
-        if (i !== item) i.classList.remove('active');
-      });
-      item.classList.toggle('active');
-    }
-  </script>
+  <section class="guarantee">
+    <img src="garantia.png" alt="7 dias de garantia">
+    <p>Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
+  </section>
 </body>
 </html>
