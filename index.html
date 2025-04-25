@@ -63,7 +63,7 @@
       font-family: 'Transforma Mix_Trial', sans-serif;
       font-weight: 600;
       letter-spacing: -0.8px;
-      line-height: 1.2;
+      line-height: 1.1;
     }
     .problem .highlight {
       color: #548151;
@@ -95,7 +95,7 @@
       font-weight: 600;
       margin-bottom: 20px;
       letter-spacing: -0.8px;
-      line-height: 1.2;
+      line-height: 1.1;
     }
     .solution-text ul {
       list-style: none;
@@ -123,12 +123,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      flex-wrap: nowrap;
+      gap: 4px;
     }
     .price-section p span.small {
       font-size: 20px;
-      vertical-align: middle;
       position: relative;
       top: -10px;
     }
@@ -159,9 +157,9 @@
     .faq {
       background: #F2F2DA;
       padding: 60px 20px;
+      text-align: center;
     }
     .faq h2 {
-      text-align: center;
       margin-bottom: 30px;
       font-size: 28px;
       font-weight: 700;
@@ -179,6 +177,7 @@
     .faq summary {
       font-weight: 600;
       cursor: pointer;
+      list-style: none;
     }
     .faq details[open] summary {
       color: #548151;
@@ -198,6 +197,20 @@
       }
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const details = document.querySelectorAll('.faq details');
+      details.forEach((targetDetail) => {
+        targetDetail.addEventListener('click', () => {
+          details.forEach((detail) => {
+            if (detail !== targetDetail) {
+              detail.removeAttribute('open');
+            }
+          });
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <!-- conteúdo mantido conforme versão anterior -->
