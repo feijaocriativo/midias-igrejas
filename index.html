@@ -1,207 +1,89 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page - Mídias na Igreja</title>
-  <link rel="stylesheet" href="main.css">
-  <link rel="preload" href="TransformaSans_Trial-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="TransformaMix_Trial-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-  <style>
-    body {
-      background: url('Preenchimento de Cor 1 copiar.png') repeat;
-      background-size: cover;
-      background-blend-mode: multiply;
-      font-family: 'Transforma Sans_Trial', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-    .hero {
-      background: url('Cabeçalho.png') no-repeat center center;
-      background-size: cover;
-      padding: 100px 20px;
-      color: #F2F2DA;
-      text-align: right;
-    }
-    .hero h1 .bold-dark {
-      color: #1E201F;
-      font-weight: 900;
-    }
-    .hero h1 .bold-light {
-      color: #F2F2DA;
-      font-weight: 600;
-    }
-    .cta-button {
-      display: inline-block;
-      background: linear-gradient(191deg, #1E201F, #688D3B);
-      color: #F2F2DA;
-      padding: 15px 30px;
-      font-weight: 800;
-      text-decoration: none;
-      margin-top: 20px;
-    }
-    .problem-section {
-      background-color: #F2F2DA;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .problem-section .highlight {
-      color: #548151;
-    }
-    .solution-section {
-      background: linear-gradient(214deg, #275C76, #1F1F1F);
-      color: #F2F2DA;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: center;
-      padding: 60px 20px;
-    }
-    .solution-image {
-      max-width: 450px;
-      width: 100%;
-    }
-    .solution-text {
-      max-width: 600px;
-    }
-    .solution-text ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .solution-text li::before {
-      content: '✔️ ';
-    }
-    .price-section {
-      background-color: #1F1F1F;
-      color: #A5BF6B;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .price-text {
-      font-size: 48px;
-    }
-    .price-rs, .price-cents {
-      font-size: 16px;
-      vertical-align: super;
-    }
-    .cta-buy {
-      display: inline-block;
-      background: linear-gradient(190deg, #688D3B, #A5BF6B);
-      color: #1F1F1F;
-      padding: 15px 30px;
-      font-weight: 800;
-      text-decoration: none;
-      margin-top: 20px;
-    }
-    .guarantee-section {
-      background-color: #F2F2DA;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .faq-section {
-      background-color: #F2F2DA;
-      padding: 60px 20px;
-    }
-    .faq h2 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .faq details {
-      margin-bottom: 10px;
-      background: #fff;
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- Cabeçalho -->
-    <header class="hero">
-      <div class="hero-text">
-        <h1>
-          <span class="bold-dark">CHEGA DE IMPROVISO:</span><br>
-          <span class="bold-light">sua igreja merece uma<br>mídia com propósito</span>
-        </h1>
-        <p>Um guia prático e estratégico pra você sair da correria e começar a comunicar sua igreja com clareza e consistência.</p>
-        <a href="#preco" class="cta-button">EU QUERO MUDAR</a>
-      </div>
-    </header>
+import React from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Accordion, AccordionItem } from "@/components/ui/accordion";
 
-    <!-- Seção de Dor -->
-    <section class="problem-section">
-      <h2>
-        Você que cuida da <span class="highlight">Mídia</span><br>
-        mas sente que está sempre <span class="highlight">apagando incêndios?</span>
-      </h2>
-      <div class="problem-texts">
-        <p>👉 Planejamento? Quase impossível.<br>
-        👉 Criatividade? Vai embora quando a semana começa.<br>
-        👉 Resultados? Você nem sabe mais o que é isso.</p>
-        <p>Você ama servir sua igreja, mas sabe que a comunicação poderia ser muito melhor se você tivesse uma direção clara.</p>
-      </div>
-    </section>
+export default function Home() {
+  return (
+    <main className="bg-[#F2F2DA] text-[#1F1F1F] font-sans">
+      {/* Cabeçalho */}
+      <section className="relative bg-cover bg-center h-[700px] flex items-end justify-end text-right px-8 pb-28" style={{ backgroundImage: "url('/Cabeçalho.png')" }}>
+        <div className="max-w-[570px]">
+          <h1 className="text-[42px] leading-tight">
+            <span className="text-[#1E201F] font-black">CHEGA DE IMPROVISO:</span><br />
+            <span className="text-[#F2F2DA] font-semibold">sua igreja merece uma<br />mídia com propósito</span>
+          </h1>
+          <p className="text-[#F2F2DA] mt-6 font-semibold text-[20px]">Um guia prático e estratégico pra você sair da correria e começar a comunicar sua igreja com clareza e consistência.</p>
+          <Button className="mt-6 bg-gradient-to-r from-[#1E201F] to-[#688D3B] text-[#F2F2DA] tracking-wider font-black">EU QUERO MUDAR</Button>
+        </div>
+      </section>
 
-    <!-- Seção de Solução -->
-    <section class="solution-section">
-      <img src="mockup.png" alt="Mockup do ebook" class="solution-image">
-      <div class="solution-text">
-        <h3>Um guia completo criado por quem entende como é a <span class="highlight">rotina das igrejas.</span></h3>
-        <ul>
-          <li>Calendário de conteúdo estratégico e cristão</li>
-          <li>Dicas práticas pra Instagram, telão, stories e reels</li>
-          <li>Ferramentas gratuitas pra ganhar tempo</li>
-          <li>Exemplos prontos pra adaptar ao seu ministério</li>
-          <li>Zero enrolação: direto ao ponto e fácil de aplicar</li>
-        </ul>
-      </div>
-    </section>
+      {/* Dor */}
+      <section className="py-20 text-center px-6">
+        <h2 className="text-[32px] font-bold leading-snug">
+          Você que cuida da <span className="text-[#548151]">Mídia</span><br />
+          mas sente que está sempre <span className="text-[#548151]">apagando incêndios?</span>
+        </h2>
+        <div className="max-w-2xl mx-auto mt-8 space-y-4 text-[18px]">
+          <p>👉 Planejamento? Quase impossível.<br />👉 Criatividade? Vai embora quando a semana começa.<br />👉 Resultados? Você nem sabe mais o que é isso.</p>
+          <p>Você ama servir sua igreja, mas sabe que a comunicação poderia ser muito melhor se você tivesse uma direção clara.</p>
+        </div>
+      </section>
 
-    <!-- Preço -->
-    <section class="price-section" id="preco">
-      <div class="price-wrapper">
-        <p class="price-text">
-          <span class="price-rs">R$</span>
-          <span class="price-big">46</span>
-          <span class="price-cents">,90</span>
-        </p>
-        <a href="https://pay.hotmart.com/D98721279A?checkoutMode=10" class="cta-buy">Garantir meu Ebook agora!</a>
-      </div>
-    </section>
+      {/* Solução */}
+      <section className="bg-gradient-to-br from-[#275C76] to-[#1F1F1F] text-[#F2F2DA] px-8 py-20 flex flex-col lg:flex-row gap-12 items-center">
+        <Image src="/mockup.png" alt="Mockup" width={400} height={400} className="rounded-xl shadow-md" />
+        <div className="max-w-lg">
+          <h3 className="text-[32px] font-semibold leading-tight mb-6">Um guia completo criado por quem entende como é a <span className="text-[#A5BF6B]">rotina das igrejas.</span></h3>
+          <ul className="space-y-2 text-[16px]">
+            <li>✔️ Calendário de conteúdo estratégico e cristão</li>
+            <li>✔️ Dicas práticas pra Instagram, telão, stories e reels</li>
+            <li>✔️ Ferramentas gratuitas pra ganhar tempo</li>
+            <li>✔️ Exemplos prontos pra adaptar ao seu ministério</li>
+            <li>✔️ Zero enrolação: direto ao ponto e fácil de aplicar</li>
+          </ul>
+        </div>
+      </section>
 
-    <!-- Garantia -->
-    <section class="guarantee-section">
-      <img src="garantia.png" alt="Selo de garantia de 7 dias" class="guarantee-img">
-      <p class="guarantee-text">Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
-    </section>
+      {/* Preço */}
+      <section className="bg-[#1F1F1F] text-[#A5BF6B] text-center py-20">
+        <div>
+          <p className="text-[48px]">
+            <sup className="text-[16px] align-super">R$</sup>
+            <span className="text-[96px] font-extrabold text-[#688D3B]">46</span>
+            <sup className="text-[16px] align-super">,90</sup>
+          </p>
+          <Button className="mt-6 bg-gradient-to-r from-[#688D3B] to-[#A5BF6B] text-[#1F1F1F]">Garantir meu Ebook agora!</Button>
+        </div>
+      </section>
 
-    <!-- Perguntas Frequentes -->
-    <section class="faq-section">
-      <h2>Dúvidas Frequentes</h2>
-      <div class="faq">
-        <details>
-          <summary>O que é o ebook?</summary>
-          <p>É um guia estratégico e prático com exemplos prontos e direcionamento cristão para mídia nas igrejas.</p>
-        </details>
-        <details>
-          <summary>Quando terei acesso?</summary>
-          <p>Assim que o pagamento for confirmado, o acesso é enviado automaticamente para seu e-mail.</p>
-        </details>
-        <details>
-          <summary>Como funciona a garantia?</summary>
-          <p>Você tem até 7 dias após a compra para pedir reembolso sem burocracia.</p>
-        </details>
-        <details>
-          <summary>É só para grandes igrejas?</summary>
-          <p>Não! Esse material serve para qualquer igreja, independentemente do tamanho.</p>
-        </details>
-      </div>
-    </section>
-  </div>
-</body>
-</html>
+      {/* Garantia */}
+      <section className="py-20 px-6 text-center">
+        <Image src="/garantia.png" alt="Garantia 7 dias" width={250} height={250} className="mx-auto mb-6" />
+        <p className="max-w-xl mx-auto text-[18px]">Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
+      </section>
+
+      {/* Perguntas Frequentes */}
+      <section className="bg-[#F2F2DA] py-20 px-6">
+        <h2 className="text-center text-[32px] font-semibold mb-10">Dúvidas Frequentes</h2>
+        <div className="max-w-2xl mx-auto">
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1" title="O que é o ebook?">
+              É um guia estratégico e prático com exemplos prontos e direcionamento cristão para mídia nas igrejas.
+            </AccordionItem>
+            <AccordionItem value="item-2" title="Quando terei acesso?">
+              Assim que o pagamento for confirmado, o acesso é enviado automaticamente para seu e-mail.
+            </AccordionItem>
+            <AccordionItem value="item-3" title="Como funciona a garantia?">
+              Você tem até 7 dias após a compra para pedir reembolso sem burocracia.
+            </AccordionItem>
+            <AccordionItem value="item-4" title="É só para grandes igrejas?">
+              Não! Esse material serve para qualquer igreja, independentemente do tamanho.
+            </AccordionItem>
+          </Accordion>
+        </div>
+      </section>
+    </main>
+  );
+}
