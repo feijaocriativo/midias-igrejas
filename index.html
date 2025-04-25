@@ -32,6 +32,7 @@
     .hero h1 {
       font-size: 42px;
       line-height: 46px;
+      font-family: 'Transforma Sans_Trial', sans-serif;
     }
     .hero h1 .dark {
       color: #1E201F;
@@ -59,7 +60,8 @@
     }
     .problem h2 {
       font-size: 32px;
-      font-weight: 700;
+      font-weight: 600;
+      font-family: 'Transforma Mix_Trial', sans-serif;
     }
     .problem .highlight {
       color: #548151;
@@ -73,6 +75,7 @@
       background: linear-gradient(214deg, #275C76 0%, #1F1F1F 100%);
       color: #F2F2DA;
       display: flex;
+      flex-wrap: wrap;
       padding: 60px 20px;
       align-items: center;
       gap: 60px;
@@ -87,10 +90,12 @@
     .solution-text h3 {
       font-size: 32px;
       font-weight: 600;
+      font-family: 'Transforma Mix_Trial', sans-serif;
       margin-bottom: 20px;
     }
     .solution-text ul {
       list-style: none;
+      padding-left: 0;
     }
     .solution-text li::before {
       content: '✔️ ';
@@ -101,14 +106,23 @@
       text-align: center;
       padding: 60px 20px;
     }
+    .price-section .label {
+      font-size: 24px;
+      font-family: 'Transforma Mix_Trial', sans-serif;
+      font-weight: 600;
+      color: #A5BF6B;
+    }
     .price-section p {
       font-size: 96px;
       font-weight: 900;
       color: #688D3B;
+      position: relative;
     }
-    .price-section span {
+    .price-section p span.small {
       font-size: 16px;
-      vertical-align: middle;
+      position: absolute;
+      top: 0;
+      transform: translateY(20%);
     }
     .price-section ul {
       list-style: none;
@@ -146,7 +160,7 @@
       color: #1F1F1F;
     }
     .faq details {
-      background: white;
+      background: #fffefc;
       padding: 20px;
       border: none;
       margin-bottom: 15px;
@@ -157,6 +171,17 @@
     .faq summary {
       font-weight: 600;
       cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .solution {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero {
+        align-items: center;
+        text-align: center;
+        padding-right: 0;
+      }
     }
   </style>
 </head>
@@ -188,7 +213,8 @@
   </div>
 
   <div class="section price-section" id="preco">
-    <p><span>R$</span>46<span>,90</span></p>
+    <div class="label">apenas</div>
+    <p><span class="small">R$</span>46<span class="small">,90</span></p>
     <ul>
       <li>Propósitos Fundamentais da Mídia Cristã</li>
       <li>Redes Sociais para Igrejas</li>
