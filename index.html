@@ -31,6 +31,10 @@
       src: url('TransformaMix_Trial-Bold.woff2') format('woff2');
       font-weight: 700;
     }
+
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Transforma Sans', sans-serif;
       margin: 0;
@@ -39,7 +43,6 @@
     }
     .container {
       width: 100%;
-      max-width: 1903px;
       margin: 0 auto;
     }
     .hero {
@@ -47,29 +50,33 @@
       background-size: cover;
       min-height: 753px;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: flex-end;
-      padding: 0 80px 100px;
+      padding: 0 5vw 80px;
       color: #F2F2DA;
+      text-align: right;
+    }
+    .hero-content {
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
     .hero h1 {
       font-size: 42px;
-      line-height: 1.2;
+      line-height: 1.3;
       font-weight: 800;
-      text-align: right;
-      max-width: 600px;
       color: #1E201F;
+      margin: 0;
     }
     .hero p {
       font-size: 20px;
       margin-top: 20px;
-      text-align: right;
-      max-width: 500px;
       color: #F2F2DA;
+      max-width: 500px;
     }
     .cta {
-      margin-top: 20px;
-      display: inline-block;
+      margin-top: 30px;
       background: linear-gradient(191deg, #1E201F 0%, #688D3B 100%);
       padding: 16px 36px;
       color: #F2F2DA;
@@ -77,7 +84,6 @@
       font-size: 16px;
       letter-spacing: 1.8px;
       text-decoration: none;
-      margin-left: auto;
     }
     .section {
       padding: 60px 20px;
@@ -109,6 +115,7 @@
     .two-columns .content {
       flex: 1 1 50%;
       text-align: left;
+      font-family: 'Transforma Sans';
     }
     .price-box {
       padding: 80px 20px;
@@ -116,19 +123,21 @@
       background-color: #1F1F1F;
       color: #F2F2DA;
     }
-    .price-box .price-highlight {
-      font-size: 96px;
-      font-weight: 900;
-      position: relative;
-      line-height: 1;
-      display: inline-block;
+    .price-highlight {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 6px;
+      font-family: 'Transforma Sans';
     }
-    .price-box .price-highlight small {
+    .price-highlight .currency,
+    .price-highlight .cents {
       font-size: 24px;
       font-weight: 700;
-      position: absolute;
-      top: -20px;
-      left: -24px;
+    }
+    .price-highlight .value {
+      font-size: 96px;
+      font-weight: 900;
     }
     .price-box ul {
       list-style: none;
@@ -136,6 +145,7 @@
       max-width: 700px;
       margin: 40px auto;
       text-align: left;
+      font-family: 'Transforma Sans';
     }
     .price-box ul li {
       margin-bottom: 10px;
@@ -143,6 +153,7 @@
     .faq {
       background-color: #F2F2DA;
       padding: 60px 20px;
+      font-family: 'Transforma Sans';
     }
     .faq h2 {
       text-align: center;
@@ -166,11 +177,13 @@
       font-size: 18px;
       font-weight: 700;
       cursor: pointer;
+      font-family: 'Transforma Sans';
     }
     .accordion-body {
       padding: 0 20px 20px;
       display: none;
       font-size: 16px;
+      font-family: 'Transforma Sans';
     }
     .accordion-item.active .accordion-body {
       display: block;
@@ -180,15 +193,29 @@
       color: #F2F2DA;
       padding: 40px;
       text-align: center;
+      font-family: 'Transforma Sans';
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        justify-content: center;
+        text-align: center;
+      }
+      .hero-content {
+        align-items: center;
+      }
+      .two-columns {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <section class="hero">
-      <div>
+      <div class="hero-content">
         <h1>CHEGA DE IMPROVISO:<br>sua igreja merece uma<br>mídia com propósito</h1>
-        <p>Um guia prático e estratégico pra você<br>sair da correria e começar a comunicar<br>sua igreja com clareza e consistência.</p>
+        <p>Um guia prático e estratégico pra você sair da correria e começar a comunicar sua igreja com clareza e consistência.</p>
         <a class="cta" href="#preco">quero começar agora</a>
       </div>
     </section>
@@ -211,7 +238,9 @@
 
     <section class="price-box" id="preco">
       <div class="price-highlight">
-        <small>R$</small>46<small>,90</small>
+        <span class="currency">R$</span>
+        <span class="value">46</span>
+        <span class="cents">,90</span>
       </div>
       <ul>
         <li>✔️ Propósitos Fundamentais da Mídia Cristã</li>
@@ -232,7 +261,7 @@
 
     <section class="section">
       <img src="garantia.png" alt="7 dias de garantia" style="max-width: 300px;" />
-      <p style="margin-top: 20px; max-width: 600px; font-weight: 400; font-size: 18px; line-height: 1.5;">Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
+      <p style="margin-top: 20px; max-width: 600px; font-weight: 400; font-size: 18px; line-height: 1.5; font-family: 'Transforma Sans';">Assinando agora você terá acesso imediato. Se em <strong>7 dias</strong> acessando você não gostar, devolvemos seu dinheiro de forma simples e segura.</p>
     </section>
 
     <section class="faq">
